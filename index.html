@@ -1,59 +1,144 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Matteo Gregoricchio | Portfolio</title>
-    <!-- 16*16px l'icona da logo; serve salvarla poi in formato .ico es favicon -->
-    <link rel="shortcut icon" type="image/x-con" href="favicon.ico">
-    <!-- provare se serva img/ o no per l'ico -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css?family=Candal|Raleway:400,700"
-    rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <header>
-      <a href="index.html" id="logo">
-      <h1>Matteo Gregoricchio</h1>
-      <h2>Storico dell'Arte, Junior Web Developer in training</h2>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="index.html" class="selected">Portfolio</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div id="wrapper">
-      <section>
-        <ul id="gallery">
-          <li><a href="http://lacerba.io" target="blank">
-          <img src="img/img1.jpg" alt="img1">
-          <p>www.lacerba.io</p></a></li>
-          <li><a href="http://www.facebook.com" target="blank">
-          <img src="img/img2.jpg" alt="img2">
-          <p>Facebook</p></a></li>
-          <li><a href="http://lacerba.io/course/html-css" target="blank">
-          <img src="img/img3.jpg" alt="img3">
-          <p>Corso Base HTML e CSS</p></a></li>
-          <li><a href="http://www.hookii.org" target="blank">
-          <img src="img/img4.jpg" alt="img4">
-          <p>Hookiiani si nasce</p></a></li>
-          <li><a href="http://www.wwf.it" target="blank">
-          <img src="img/img5.jpg" alt="img5">
-          <p>WWF</p></a></li>
-        </ul>
-      </section>
-      <footer>
-        <a href="profilofacebook">
-        <img src="img/icons_fb.png" alt="logo facebook" class="icona_social"></a>
-        <a href="profilotwitter">
-        <img src="img/twitter_logo.png" alt="logo twitter" class="icona_social"></a>
-        <p>&copy; 2018 Matteo Gregoricchio</p>
-      </footer>
+<head>
+  <meta charset="utf-8">
+  <title>Matteo Gregoricchio</title>
+  <!-- 16*16px l'icona da logo; serve salvarla poi in formato .ico es favicon -->
+  <link rel="shortcut icon" type="image/x-con" href="img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <div>
+  <header class="main-header clearfix">
+    <a href="index.html" id="logo">
+    <h1>Matteo Gregoricchio</h1>
+    </a>
+  <nav>
+    <ul>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  </header>
+  <div class="banner">
+        <p>Curriculum Vitae (press your preferred flag!)</p>
+        <p><a href="CV Matteo Gregoricchio - Foto.pdf" target="blank">
+        <img src="img/it_flag.png" alt="itaflag" class="centerimg"></a>
+        <a href="CV Matteo - Eng Foto.pdf" target="blank">
+        <img src="img/uk_flag.png" alt="ukflag" class="centerimg"></a>
+        <a href="CV Matteo - Spa.pdf" target="blank">
+        <img src="img/spa_flag.png" alt="spaflag" class="centerimg"></a></p>
+        <a href="#portfolio"><img class="arrow" src="img/arrow.png" alt="arrow"></a>
   </div>
-  </body>
+  <div id="portfolio" class="wrapper clearfix">
+    <section>
+      <ul id="gallery">
+        <li>
+          <a href="https://www.academia.edu/36116547/Julio_Castellanos_e_i_Contempor%C3%A1neos" target="blank">
+          <img src="img/tesilt.jpeg" alt="img2"></a>
+          <p class="italic">Julio Castellanos e i Contemporáneos</p>
+          <p>Tesi Triennale, relatore: dr. <a href="http://www.mariosartor.com">Mario Sartor</a>
+          </p>
+        </li>
+        <li>
+          <a href="https://www.academia.edu/36116548/Il_conceptualismo_ideol%C3%B3gico_nell_Argentina_degli_anni_70_analisi_dell_operato_del_Grupo_CAYC" target="blank">
+          <img src="img/tesilm.jpg" alt="img3"></a>
+          <p class="italic">Il conceptualismo ideológico nell’Argentina degli anni ‘70:
+          analisi dell’operato del Grupo CAYC</p>
+          <p>Tesi Magistrale, relatore: dr. <a href="http://portal.uc3m.es/portal/page/portal/dpto_hum_geo_hist_arte/miembros_pag/jose_luis_de_la_nuez_santana">
+            José Luis De la Nuez Santana</a></p>
+        </li>
+        <li>
+          <img src="img/modellositocalcio.png" alt="img4">
+          <p>Modello 1: Sito Squadra di Calcio</p>
+          <p><a href="https://followynne.github.io/PrimaProva-OnePage">One Page</a>
+             - <a href="https://followynne.github.io/PrimaProva/" target="blank">Classic</p></a>
+        </li>
+        <!-- **** MODELLI PER AGGIUNTE ****
+        <li>
+          <a href="http://www.wip.it" target="blank">
+          <img src="img/prova.jpeg" alt="img4">
+          <p>Modello [WIP]/libromio?</p>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.wip.it" target="blank">
+          <img src="img/prova.jpeg" alt="img4">
+          <p>Spazio3</p>
+          </a>
+        </li>
+        ****** -->
+      </ul>
+    </section>
+  </div>
+  <div class="container" id="about">
+    <div class="wrapper clearfix">
+      <section>
+        <img src="img/0. profilo.jpeg" alt="profilephoto" class="foto-profilo">
+        <h3>About</h3>
+        <p>Benvenuto nel mio sito personale! Sono <span class="bold">Matteo</span> e, se sei arrivato su questa pagina,
+        starai cercando qualche informazione su di me.</p>
+        <p>Sono un (recente!) <span class="bold">laureato magistrale</span> in Storia dell'Arte, con un grande interesse
+        per l'informatica. Per questo <span class="bold">sto studiando</span> da autodidatta per iniziare il mio percorso
+        <span class="bold">come Full-Stack Developer</span>. Per darti un'idea dei miei progressi, mi trovo al quarto corso [Form e tabelle con HTML]
+        della carriera da Full-Stack Developer su Lacerba.io (clicca <a href="http://lacerba.io/p/full-stack">qui</a> se sei interessato!);
+        per ora <span class="bold">mi destreggio con HTML e CSS</span>. Negli ultimi anni di studio ho anche lavorato come traduttore
+        freelance - se sei curioso, sopra trovi il mio CV.</p>
+        <p>Per darti qualche info meno asettica ti dico che: fin da piccolo sono un avido lettore,
+        sia di libri che di fumetti; sono un videogiocatore incallito since psX, passando poi per
+        ps2/3/4 e Nintendo Ds (e discendenti); mi intendo di calcio, senza più seguirlo (troppo)
+        come un tempo. La cosa che meglio incarna la mia anima è l'<span class="bold">atmosfera che si respira in
+        <a href="https://www.youtube.com/watch?v=kSRIlwXDBB4" target="blank">Ico</a></span> - 'nuff said.</p>
+        <p>Se mi trovi in giro fammi un saluto :)!</p>
+      </section>
+    </div>
+  </div>
+  <div class="wrapper clearfix" id="contact">
+    <section id="info">
+      <h3>Per conoscermi meglio</h3>
+      <ul>
+      <li><span class="bold">Punti di Forza:</span> Ordine - Chiarezza - Sintesi & Efficacia - Resistenza</li>
+      <li><span class="bold">Conoscenze Informatiche:</span> HTML - CSS3 - PacchettoOffice - [...]</li>
+      <li><span class="bold">Lingue conosciute:</span> Italiano - Inglese - Spagnolo</li>
+      <li><span class="bold">Libri Fondamentali:</span> La Caduta, A. Camus - La Nausea, P. Sartre - Teatro, T. Beckett -
+        Tempo di Uccidere, E. Flaiano - I Demoni, F. Dostoevskij</li>
+      <li><span class="bold">Fumetti Fondamentali:</span> PKNA - Corto Maltese, H. Pratt - Blame!, T. Nihei - F.M.A, H. Arakawa
+       - Akira, K. Otomo</li>
+      <li><span class="bold">Videogiochi Fondamentali:</span> Ico - The Last Guardian - The Witness - Metal Gear Solid - </li>
+      <li><span class="bold">Altro:</span> ♥ caffè, stirare, ordinare geometricamente gli oggetti</li>
+      </ul>
+    </section>
+    <section id="contatti">
+      <h3>Contacts</h3>
+      <ul id="contact-info">
+        <li class="location"><a href="https://goo.gl/maps/SRbLuTqXgg52">Currently based in Turin</a></li>
+        <li class="mail"><a href="mailto:matteo.gregoricchio@mail.com">Write me!</a></li>
+        <li class="phone"><a href="tel:+393386613822">Call/WhatsApp me!</a></li>
+        <li class="teleg"><a href="https://t.me/MatteoGregoric" target="blank">Telegram-me!</a></li>
+      </ul>
+      <p>ps: click them ;)</p>
+    </section>
+  </div>
+  </div>
+    <footer class="main-footer">
+      <a href="https://www.linkedin.com/in/matteo-gregoricchio">
+      <img src="img/icon_linkedin.png" alt="profilelinkedin" class="icona_social"></a>
+      <a href="https://www.upwork.com/o/profiles/users/_~01ca9d34312f7fa73d/">
+      <img src="img/icon_upwork.png" alt="profileupwork" class="icona_social"></a>
+      <a href="https://unito.academia.edu/MatteoGregoricchio">
+      <img src="img/academia.ico" alt="profiloacadedu" class="icona_social"></a>
+      <a href="https://github.com/followynne">
+      <img src="img/icon_github.png" alt="profilegithub" class="icona_social"></a>
+      <a href="https://psnprofiles.com/wigghi92">
+      <img src="img/icon_ps.png" alt="profileplaystation" class="icona_social"></a>
+      <p>&copy; 1992-2018 <a href="img/easteregg.jpg">Matteo Gregoricchio</a></p>
+    </footer>
+
+</body>
 </html>

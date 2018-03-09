@@ -1,43 +1,62 @@
 /**************************
         GENERAL
 ***************************/
-
 a {
   text-decoration: none;
 }
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
-
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.centerimg {
+  box-sizing: border-box;
+  padding: 10px;
+  }
+.clearfix:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
 /**************************
         HEADER
 ***************************/
 #logo {
   text-align: center;
 }
-header {
-  background-color: #37A960;
-  margin: 0 0 30px 0;
+.main-header {
+  background-color: rgba(24, 147, 240, 0.4);
+  margin: 0 0 0 0;
   padding: 5px 0 0 0;
-  overflow: auto;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 h1 {
   color: #ffffff;
-  font-family: 'Candal', sans-serif;
-  margin: 15px 0;
-  font-size: 2.1em;
+  font-family: 'Comfortaa', cursive;
+  margin: 10px 0 3px 0;
+  font-size: 1.9em;
 }
-h2 {
+/* h2 */{
   color: #ffffff;
-  font-family: 'Candal', sans-serif;
-  margin: 15px 0 20px 0;
-  font-size: 1.4em;
+  font-family: 'Comfortaa', cursive;
+  margin: 3px 0 10px 0;
+  font-size: 0.9em;
 }
+
 /**************************
         NAV
 ***************************/
 nav {
-  background-color: #297F52;
+  font-family: 'Comfortaa', cursive;
+  background-color: #2D80D4;
+  opacity: 0.4;
   text-align: center;
   padding: 5px 0 5px 0;
 }
@@ -45,6 +64,8 @@ nav a {
   color: #ffffff;
   font-weight: bold;
   padding: 0 2px;
+  color: #ffffff;
+  transition: all 0.2s;
 }
 nav ul {
   list-style: none;
@@ -55,18 +76,37 @@ nav li {
   display: inline-block;
 }
 nav a:hover {
-  color: #27583F;
+  color: #1B82D1;
 }
-nav a.selected {
-  color: #27583F;
+/**************************
+        BANNER
+***************************/
+.banner {
+  text-align: center;
+  padding: 487px 0 60px 0;
+  /** 66B4EF **/
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(102, 180, 239, 0.6)),
+              url("../img/banner.jpeg") no-repeat fixed center / cover;
+}
+.banner p {
+  font-size: 1.4em;
+  font-family: 'Comfortaa', cursive;
+  color: #ffffff;
+  margin: 20px 0 15px 0;
+}
+.arrow {
+  width: 40px;
+  height: 30px;
+  padding-top: 20px;
 }
 /**************************
         SECTION
 ***************************/
-#wrapper {
+.wrapper {
+  box-sizing: border-box;
   max-width: 940px;
   margin: 0 auto;
-  padding: 0 5% 5px 5%;
+  padding: 30px 5% 30px 5%;
 }
 #gallery {
   list-style: none;
@@ -76,45 +116,84 @@ nav a.selected {
 img {
   max-width: 100%;
 }
+#gallery img {
+  max-width: 100%;
+}
 #gallery li {
   float: left;
   width: 45%;
+  height: 260px;
+  overflow: auto;
   margin: 2.5%;
   background-color: #f5f5f5;
+  position: relative;
+  text-align: center;
 }
-#gallery li a p {
+#gallery li p {
   font-size: 0.85em;
   color: #000000;
+  font-weight: bold;
   padding: 5%;
   margin: 0;
+}
+#gallery p a {
+  color: inherit;
 }
 /**************************
         FOOTER
 ***************************/
-footer {
+.main-footer {
   text-align: center;
   clear: both;
+  background-color: rgba(102, 180, 239, 0.5);
+  padding: 40px;
 }
 footer p {
   font-size: 0.85em;
 }
+footer a {
+  color: inherit;
+}
 .icona_social {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin: 0 5px;
 }
 /**************************
         ABOUT
 ***************************/
+.container {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+              url("../img/about_img.jpg") no-repeat fixed center / cover;
+  padding: 60px 0 40px 0;
+}
 .foto-profilo {
   display: block;
-  max-width: 200px;
+  max-width: 250px;
   margin: 0 auto;
-  border-radius: 100%;
+  border-radius: 40%;
+}
+#wrapper section {
+  padding-top: 20px;
+}
+#about p {
+  color: #ffffff;
+  text-align: justify;
+}
+#about a {
+  color: inherit;
 }
 /**************************
         CONTACT
 ***************************/
+#info ul {
+  list-style-type: georgian;
+  text-align: justify;
+  padding-left: 25px;
+}
+#info li {
+    padding-bottom: 5px;
+}
 #contact-info {
   list-style: none;
   padding: 0;
@@ -129,12 +208,15 @@ footer p {
   padding: 0 0 0 30px;
   margin: 0 0 10px 0;
 }
+#contact-info li.location a {
+  background-image: url(../img/gps-ic.png);
+}
 #contact-info li.phone a {
   background-image: url(../img/phone-ic.png);
 }
 #contact-info li.mail a {
   background-image: url(../img/mail-ic.png);
 }
-#contact-info li.twit a {
-  background-image: url(../img/twit-ic.png);
+#contact-info li.teleg a {
+  background-image: url(../img/teleg-ic.png);
 }
