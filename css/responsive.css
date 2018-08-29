@@ -18,7 +18,7 @@
 ***************************/
   .foto-profilo {
     float: left;
-    margin: 85px 5% 85px 0;
+    margin: 210px 7% 220px 0;
   }
 /**************************
         PORTFOLIO (%adattamento)
@@ -56,3 +56,12 @@
     box-shadow: 3px 3px 2px rgba(0,0,0,0.4);
   }
 }
+
+@media screen and (min-width: 800px) {
+/**************************
+        ABOUT
+***************************/
+  .foto-profilo {
+    float: left;
+    margin: 80px 5% 170px 0;
+  }
