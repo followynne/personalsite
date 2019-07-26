@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-    "scripts": {
+  "scripts": {
     "start": "parcel index.html",
-    "predeploy": "rm -rf dist && parcel build index.html --public-url https://www.matteogregoricchio.com/",
+    "predeploy": "rm -rf dist && parcel build index.html --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -14,9 +14,8 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   },
   "repository": {
     "type": "git",
