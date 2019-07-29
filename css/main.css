@@ -1,11 +1,12 @@
 /**************************
         GENERAL
 ***************************/
-a {
-  text-decoration: none;
-}
 body {
   font-family: 'Montserrat', sans-serif;
+}
+a {
+  text-decoration: none !important;
+  
 }
 .bold {
   font-weight: bold;
@@ -29,7 +30,7 @@ body {
   text-align: center;
 }
 .main-header {
-  background-color: rgba(24, 147, 240, 0.4);
+  background-color: rgba(115, 230, 70, 0.8);
   margin: 0 0 0 0;
   padding: 5px 0 0 0;
   position: fixed;
@@ -41,15 +42,17 @@ h1 {
   color: white;
   font-family: 'Comfortaa', cursive;
   margin: 10px 0 3px 0;
-  font-size: 1.9em;
+  font-size: 1.7rem!important;
 }
-/* h2 */{
+h2{
   color: #ffffff;
   font-family: 'Comfortaa', cursive;
   margin: 3px 0 10px 0;
-  font-size: 0.9em;
+  font-size: 1.3rem!important;
 }
-
+h3{
+  text-align: center;
+}
 /**************************
         NAV
 ***************************/
@@ -77,36 +80,40 @@ nav li {
 }
 nav a:hover {
   color: #1B82D1;
+  text-decoration: none;
 }
 /**************************
         BANNER
 ***************************/
 .banner {
   text-align: center;
-  padding: 487px 0 60px 0;
+  padding: 490px 0 60px 0;
   /** 66B4EF **/
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(102, 180, 239, 0.6)),
-              url("../img/banner.jpeg") no-repeat fixed center / cover;
+  background: linear-gradient(rgba(23, 200, 253, 0.281), rgba(7, 127, 219, 0.301)),
+              url("../img/VDiAmLr.jpg") no-repeat fixed center / cover;
 }
 .banner p {
   font-size: 1.4em;
   font-family: 'Comfortaa', cursive;
-  color: #ffffff;
-  margin: 20px 0 15px 0;
+  color: #3a2a2a;
+  font-weight: 900;
+  margin: 40px 0 15px 0;
 }
 .arrow {
-  width: 40px;
-  height: 30px;
-  padding-top: 20px;
+  width: 50px;
+  height: 50px;
 }
 /**************************
         SECTION
 ***************************/
 .wrapper {
   box-sizing: border-box;
-  max-width: 940px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 30px 5% 30px 5%;
+  padding: 50px 3% 20px 3%;
+}
+.wid{
+  width: 90%;
 }
 #gallery {
   list-style: none;
@@ -122,22 +129,62 @@ img {
 #gallery li {
   float: left;
   width: 45%;
-  height: 260px;
+  height: 300px;
   overflow: auto;
   margin: 2.5%;
-  background-color: #f5f5f5;
+  background-color: rgba(31, 190, 190, 0.089);
   position: relative;
   text-align: center;
 }
 #gallery li p {
-  font-size: 0.85em;
+  font-size: 0.83em;
   color: #000000;
   font-weight: bold;
-  padding: 5%;
+  padding: 2%;
   margin: 0;
 }
 #gallery p a {
   color: inherit;
+}
+/**************************
+ABOUT
+***************************/
+.cont {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
+  url("../img/about_img.jpg") no-repeat fixed center / cover;
+  padding: 30px 0 40px 0;
+}
+.foto-profilo {
+  display: block;
+  max-width: 250px;
+  margin: 0 auto;
+  border-radius: 40%;
+}
+#wrapper section {
+  padding-top: 20px;
+}
+#about p {
+  color: #ffffff;
+  text-align: justify;
+  line-height: 1.3rem;
+}
+#about a {
+  color: inherit;
+}
+/**************************
+CONTACT
+***************************/
+#info ul {
+  list-style-type: georgian;
+  text-align: justify;
+  padding-left: 25px;
+}
+#info li {
+  padding-bottom: 5px;
+}
+
+.carousel-inner{
+  height: 315px;
 }
 /**************************
         FOOTER
@@ -160,63 +207,10 @@ footer a {
   margin: 0 5px;
 }
 /**************************
-        ABOUT
+        TUTORIAL
 ***************************/
-.container {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
-              url("../img/about_img.jpg") no-repeat fixed center / cover;
-  padding: 60px 0 40px 0;
-}
-.foto-profilo {
-  display: block;
-  max-width: 250px;
-  margin: 0 auto;
-  border-radius: 40%;
-}
-#wrapper section {
-  padding-top: 20px;
-}
-#about p {
-  color: #ffffff;
+.banner-tut {
   text-align: justify;
-}
-#about a {
-  color: inherit;
-}
-/**************************
-        CONTACT
-***************************/
-#info ul {
-  list-style-type: georgian;
-  text-align: justify;
-  padding-left: 25px;
-}
-#info li {
-    padding-bottom: 5px;
-}
-#contact-info {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#contact-info a {
-  color: #000000;
-  display: block;
-  min-height: 20px;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  padding: 0 0 0 30px;
-  margin: 0 0 10px 0;
-}
-#contact-info li.location a {
-  background-image: url(../img/gps-ic.png);
-}
-#contact-info li.phone a {
-  background-image: url(../img/phone-ic.png);
-}
-#contact-info li.mail a {
-  background-image: url(../img/mail-ic.png);
-}
-#contact-info li.teleg a {
-  background-image: url(../img/teleg-ic.png);
+  width: 80%;
+  padding: 130px 20px 600px 20px;
 }

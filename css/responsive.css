@@ -12,14 +12,15 @@
   }
 }
 
-@media screen and (min-width: 660px) {
+@media screen and (min-width: 770px) {
 /**************************
         ABOUT
 ***************************/
   .foto-profilo {
     float: left;
-    margin: 210px 7% 220px 0;
+    margin: 80px 35px;
   }
+
 /**************************
         PORTFOLIO (%adattamento)
         5*3=15
@@ -50,19 +51,27 @@
   nav a {
     padding: 0 5px;
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   .main-header {
     box-shadow: 3px 3px 2px rgba(0,0,0,0.4);
   }
+  .banner-tut {
+    padding: 100px 20px 400px 20px;
+  }
+
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 950px) {
 /**************************
         ABOUT
 ***************************/
   .foto-profilo {
     float: left;
-    margin: 80px 5% 170px 0;
+    margin: 80px 35px;
+    
   }
+  #gallery li {
+    width: 20%;
+    }
 }
