@@ -16,12 +16,12 @@
     <title>Publish your Site on GitHub Pages Hosting using Parcel Bundler</title>
     <!-- 16*16px l'icona da logo; serve salvarla poi in formato .ico es favicon -->
     <link rel="shortcut icon" type="image/x-con" href="../img/favicon.ico">
+    <script src="../javascript/main.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa|Montserrat:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
@@ -39,7 +39,7 @@
             </nav>
         </header>
         <div class="banner-tut">
-            <p>WIP</p>
+        
 
         </div>
     </div>
@@ -61,6 +61,5 @@
         </br></br>
         <p>&copy; 1992-2019 <a href="../img/easteregg.jpg" alt="easteregg">Matteo Gregoricchio</a></p>
     </footer>
-    <script src="../javascript/main.js"></script>
 </body>
 </html>

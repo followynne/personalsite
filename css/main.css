@@ -40,14 +40,14 @@ a {
 }
 h1 {
   color: white;
-  font-family: 'Comfortaa', cursive;
-  margin: 10px 0 3px 0;
+  font-family: 'Comfortaa', cursive !important;
+  margin: 5px 0 3px 0 !important;
   font-size: 1.7rem!important;
 }
 h2{
   color: #ffffff;
-  font-family: 'Comfortaa', cursive;
-  margin: 3px 0 10px 0;
+  font-family: 'Comfortaa', cursive !important;
+  margin: 2px 0 7px 0 !important;
   font-size: 1.3rem!important;
 }
 h3{
@@ -106,6 +106,9 @@ nav a:hover {
 /**************************
         SECTION
 ***************************/
+#portfolio{
+  background-color: rgba(130, 194, 255, 0.151);
+}
 .wrapper {
   box-sizing: border-box;
   max-width: 100%;
@@ -132,9 +135,12 @@ img {
   height: 300px;
   overflow: auto;
   margin: 2.5%;
-  background-color: rgba(31, 190, 190, 0.089);
+  background-color: rgba(255, 255, 255);
   position: relative;
   text-align: center;
+}
+#gallery li::-webkit-scrollbar {
+  display: none;
 }
 #gallery li p {
   font-size: 0.83em;
@@ -172,8 +178,15 @@ ABOUT
   color: inherit;
 }
 /**************************
-CONTACT
+PERSONAL INFO & CAROUSEL
 ***************************/
+#contact{
+  background-color: rgba(130, 194, 255, 0.151);
+  width: 100%;
+}
+#info{
+  width:100%;
+}
 #info ul {
   list-style-type: georgian;
   text-align: justify;
@@ -182,9 +195,30 @@ CONTACT
 #info li {
   padding-bottom: 5px;
 }
-
 .carousel-inner{
-  height: 315px;
+  height: 300px;
+}
+.carousel-inner img {
+  height: 300px;
+  object-fit: cover ;
+}
+.carousel-caption{
+  background: rgba(0,0,0,0.6);
+  font-size: .80rem;
+  line-height: 0.9rem;
+  font-weight: 700;
+}
+.no-back{
+  background: none;
+}
+#delta {
+  width: 210px;
+  height: 40px;
+  padding-bottom: 3px;
+}
+#other {
+  width: 90px;
+  height: 35px;
 }
 /**************************
         FOOTER
@@ -193,7 +227,7 @@ CONTACT
   text-align: center;
   clear: both;
   background-color: rgba(102, 180, 239, 0.5);
-  padding: 40px;
+  padding: 25px;
 }
 footer p {
   font-size: 0.85em;
