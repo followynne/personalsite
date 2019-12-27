@@ -90,7 +90,7 @@ nav a:hover {
   padding: 490px 0 60px 0;
   /** 66B4EF **/
   background: linear-gradient(rgba(23, 200, 253, 0.281), rgba(7, 127, 219, 0.301)),
-              url("../img/VDiAmLr.jpg") no-repeat fixed center / cover;
+              url("../img/ban.png") no-repeat fixed center / cover;
 }
 .banner p {
   font-size: 1.4em;
@@ -247,4 +247,18 @@ footer a {
   text-align: justify;
   width: 80%;
   padding: 130px 20px 600px 20px;
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
 }
