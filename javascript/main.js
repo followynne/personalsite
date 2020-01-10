@@ -19,6 +19,8 @@ $(document).ready(() => {
             scrollTop: $(link).offset().top
         }, 'slow');
     })
+    let date = new Date();
+    $("#yearr").append(date.getFullYear());
 
     $(function () {
         $('[data-toggle="popover"]').popover()

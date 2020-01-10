@@ -1,3 +1,9 @@
+@media screen and (min-width: 300px) {
+.art {
+    padding: 130px 20px 20px 20px;
+}
+}
+
 @media screen and (min-width: 770px) {
     /**************************
   ABOUT
@@ -20,14 +26,14 @@
 ***************************/
     #logo {
         float: left;
-        width: 45%;
+        width: 40%;
         margin-left: 5%;
         text-align: left;
     }
     nav {
         float: right;
-        width: 45%;
-        margin-right: 5%;
+        width: 49%;
+        margin-right: 3%;
         background: none;
         text-align: right;
         padding-top: 15px;
@@ -43,6 +49,9 @@
     }
     .banner-tut {
         padding: 100px 20px 400px 20px;
+    }
+    .art {
+        padding: 130px 20px 20px 20px;
     }
     #info {
         width: 45%;
@@ -62,6 +71,7 @@
         float: left;
         margin: 80px 35px;
     }
+
     #delta {
         width: 320px;
         height: 60px;

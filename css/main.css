@@ -2,7 +2,7 @@
         GENERAL
 ***************************/
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 a {
   text-decoration: none !important;
@@ -30,7 +30,7 @@ a {
   text-align: center;
 }
 .main-header {
-  background-color: rgba(115, 230, 70, 0.8);
+  background-color:  rgba(2, 40, 115, 0.6);
   margin: 0 0 0 0;
   padding: 5px 0 0 0;
   position: fixed;
@@ -40,13 +40,13 @@ a {
 }
 h1 {
   color: white;
-  font-family: 'Comfortaa', cursive !important;
+  font-family: 'Lato', bold  !important;
   margin: 5px 0 3px 0 !important;
   font-size: 1.7rem!important;
 }
 h2{
   color: #ffffff;
-  font-family: 'Comfortaa', cursive !important;
+  font-family: 'Lato', bold !important;
   margin: 2px 0 7px 0 !important;
   font-size: 1.3rem!important;
 }
@@ -57,17 +57,16 @@ h3{
         NAV
 ***************************/
 nav {
-  font-family: 'Comfortaa', cursive;
-  background-color: #2D80D4;
+  font-family: 'Lato', bold;
+  background-color: rgb(132, 172, 211);
   opacity: 0.4;
   text-align: center;
   padding: 5px 0 5px 0;
 }
 nav a {
-  color: #ffffff;
+  color: #f1dede;
   font-weight: bold;
   padding: 0 2px;
-  color: #ffffff;
   transition: all 0.2s;
 }
 nav ul {
@@ -94,7 +93,7 @@ nav a:hover {
 }
 .banner p {
   font-size: 1.4em;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Lato', bold;
   color: #3a2a2a;
   font-weight: 900;
   margin: 40px 0 15px 0;
@@ -107,7 +106,7 @@ nav a:hover {
         SECTION
 ***************************/
 #portfolio{
-  background-color: rgba(130, 194, 255, 0.151);
+  background-color: rgba(181, 201, 240, 0.151);
 }
 .wrapper {
   box-sizing: border-box;
@@ -181,7 +180,7 @@ ABOUT
 PERSONAL INFO & CAROUSEL
 ***************************/
 #contact{
-  background-color: rgba(130, 194, 255, 0.151);
+  background-color: rgba(181, 201, 240, 0.151);
   width: 100%;
 }
 #info{
