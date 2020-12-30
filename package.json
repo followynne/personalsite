@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "parcel ./*.html ./articles/*.html",
-    "predeploy": "rm -rf dist && parcel build ./*.html ./articles/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist",
+    "predeploy": "rm -rf dist && parcel build ./*.html ./articles/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist && cp sitemap.xml ./dist",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
