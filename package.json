@@ -8,8 +8,8 @@
     }
   },
   "scripts": {
-    "start": "parcel ./*.html ./html-tutorials/*.html",
-    "predeploy": "rm -rf dist && parcel build ./*.html ./html-tutorials/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist",
+    "start": "parcel ./*.html ./articles/*.html",
+    "predeploy": "rm -rf dist && parcel build ./*.html ./articles/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
