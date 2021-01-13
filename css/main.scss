@@ -261,7 +261,8 @@ footer a {
 ***************************/
 .banner-tut {
   text-align: justify;
-  padding: 130px 20px 600px 20px; // ???
+  width: 95%;
+  padding: 130px 0 600px 0;
 }
 
 .markdown-body {
@@ -300,8 +301,9 @@ footer a {
 
     ol {
       list-style-type: lower-latin;
-      ::first-letter {
-        font-weight: 600;
+      li::first-letter {
+        font-size: 1.5em;
+        font-weight: 900;
         font-style: italic;
       }
     }
@@ -309,6 +311,26 @@ footer a {
 
   .alert {
     margin: 1.1rem auto;
+    padding-top: 45px;
+    .title, .title-warning {
+      position:absolute;
+      right: -15px;
+      top: -5px;
+      padding: 5px;
+      box-shadow: 5px 3px 8px #888888;
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 600;
+      ::first-letter {
+        font-style: unset;
+      }
+    }
+    .title {
+      background-color: rgb(27, 155, 91, 0.5);
+    }
+    .title-warning {
+      background-color: rgba(155, 42, 27, 0.603);
+    }
   }
 }
 
