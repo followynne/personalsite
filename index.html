@@ -32,10 +32,10 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#about" class="scroll">About</a></li>
-                <li><a href="./articles/">Articles</a></li>
-                <li><a href="#contact" class="scroll">Contact</a></li>
                 <li><a href="#portfolio" class="scroll">Portfolio</a></li>
+                <li><a href="./articles/">Articles</a></li>
+                <li><a href="#about" class="scroll">About</a></li>
+                <li><a href="#contact" class="scroll">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -54,6 +54,70 @@
         </div>
     </div>
 
+    <div id="portfolio" class="wrapper clearfix">
+        <section>
+            <h3 class="section-title">Portfolio</h3>
+            <!-- <div class="text-center bold">👷 Under Construction</div> -->
+            <ul id="gallery">
+                <li>
+                    <a href="https://github.com/followynne/ITS_sqlFinalExam" target="blank">
+                        <img src="img/ecommerce.png" alt="img4">
+                        <p class="italic">E-Commerce Backend, with database model</p>
+                        <p>Written with C#, DB for Microsoft SQLSERVER 2017</p>
+                        <p>It lets manage the CRUD operations.</p>
+                        <p>It helps view the database content, search offered by category.</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/followynne/ITS_webMemory" target="blank">
+                        <img src="img/memory.gif" alt="img4">
+                        <p class="italic">Memory Game - written in Javascript and JQuery, with Ajax calls to static Json
+                            data</p>
+                        <p>Memory Game. Cards are created with an Ajax call to a JSON object, with the imgs paths. It
+                            has a point system,
+                            it saves the player highest score in the local storage.
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/followynne/ITS_CloudProject_SoncinDAugelliGregoricchio" target="blank">
+                        <img src="img/image_site.png" alt="image-hosting-site">
+                        <p class="italic">Image Hosting Site</p>
+                        <p>This is a cloud-based photo management website. An user can register to the service and
+                            upload
+                            its photos, to host and manage them remotely.
+                            <p>Written with E.Soncin & M.D'Augelli, in PHP, JS, for Azure Cloud</p>
+                    </a>
+                </li>
+                <li class="hidden-portfolio-li" style="background-color: transparent;"></li>
+                <li>
+                    <a href="https://www.academia.edu/36116547/Julio_Castellanos_e_i_Contempor%C3%A1neos"
+                        target="blank">
+                        <img src="img/tesilt.jpeg" alt="img2">
+                        <p class="italic">Julio Castellanos e i Contemporáneos</p>
+                        <p>Bachelor's degree thesis (IT), mentor: dr. <a href="http://www.mariosartor.com"
+                                target="blank">Mario
+                                Sartor</a>
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.academia.edu/36116548/Il_conceptualismo_ideol%C3%B3gico_nell_Argentina_degli_anni_70_analisi_dell_operato_del_Grupo_CAYC"
+                        target="blank">
+                        <img src="img/tesilm.jpg" alt="img3">
+                        <p class="italic">Il conceptualismo ideológico nell’Argentina degli anni ‘70: analisi
+                            dell’operato del Grupo CAYC
+                        </p>
+                        <p>Master's degree thesis (IT), mentor: dr.
+                            <a href="http://portal.uc3m.es/portal/page/portal/dpto_hum_geo_hist_arte/Miembros_nueva/jose_luis_de_la_nuez_santana"
+                                target="blank">José Luis De la Nuez Santana</a>
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
     <div id="about" class="cont">
         <div class="wrapper clearfix wid">
             <section>
@@ -62,55 +126,56 @@
                         <div class="col-xl-4 col-lg-4"><img src="img/0. profilo.jpeg" alt="profilephoto"
                                 class="foto-profilo"></div>
                         <div class="col-xl-8 col-lg-8">
-                            <p>Benvenuto! Sono <span class="bold">Matteo</span> e, se sei
-                                arrivato su questa pagina, starai cercando qualche informazione
-                                sul sottoscritto. :)</p>
-                            <p>Sono un <span class="bold">Back-End Developer</span> - anzi, lo
-                                sarò (spero!) ufficialmente entro metà del 2020, una volta
-                                completato il corso di
+                            <h4>Hi! I'm <span class="bold">Matteo</span>.</h4>
+                            <p>I'm a <span class="bold">Web Developer</span> currently working for Deltatre,
+                                from their Turin offices. Nowadays I work both on back-end and front-end services, thus
+                                I could consider myself a full-stack dev... JK, not nearly good enough to be decent on
+                                neither one of them. 😬 I graduated from the
                                 <a href="http://www.its-ictpiemonte.it/courses/backend-development/"
-                                    target="blank">Integrated Backend Services</a> presso l'
+                                    target="blank">Integrated Backend Services</a> course, hosted by
                                 <a href="http://www.its-ictpiemonte.it/" target="blank">ITS ICT
-                                    di Torino</a> (Qualifica di Tecnico Superiore per lo
-                                Sviluppo Software).
-                                </br>Venendo alle cose importanti ;), i linguaggi in cui vorrei
-                                specializzarmi particolarmente sono il
-                                <span class="bold">.Net/C#</span>,
-                                <span class="bold">Javascript</span> e il <span class="bold">PHP</span> come
-                                linguaggio server-side.
-                                Maneggio inoltre il <span class="bold">SQL e i Database
-                                    Relazionali</span> e ho una base di
-                                <span class="bold">GIT</span>.
+                                    - Turin</a>, where I started to dig into development.
                             </p>
-                            <p>Nei prossimi tempi mi piacerebbe poi imparare meglio <span class="bold">MongoDB e i
-                                    DB No-SQL</span> e approfondire le mie conoscenze in ambito di
-                                <span class="bold">Cloud Infrastructure</span> - ho seguito dei
-                                corsi su
-                                <span class="bold">AWS, Azure, Docker e Kubernetes</span>
-                                durante gli studi ma è una disciplina complessa, di cui ho una
-                                infarinatura.</br>Se però vuoi vedere nello specifico i
-                                linguaggi/argomenti che ho trattato durante
-                                gli studi/anni, o le aziende per cui ho lavorato, più in basso
-                                trovi informazioni al riguardo.
+                            <h4>Let's get down to the real business - Programming 😏</h4>
+                            <p>The languages I currently use are
+                                <span class="bold">.Net/C#</span>, <span class="bold">Javascript & React</span>, the
+                                first being the language I'm trying to master as my "main".
+                                From a Dbs perspective, I use on a daily basis <span class="bold">SQL lang. on SQL
+                                    Server specs</span> while I frequently have to interact with <span
+                                    class="bold">MongoDb</span> operations.
+                                To add to the mix of what I always use, there's <span class="bold">Git</span> (of
+                                course), Azure Devops & Github for the source control management.
                             </p>
+
+                            <p>As of the start of 2021, on my Learning todo I have .Net (to improve and master the best
+                                I can) and Typescript. On a higher pov, I'm trying to learn more on Design Patterns and
+                                Software Architecture, to improve my capabilities of creating good, clean, better code.
+                                For the same reason I want to learn and improve over TDD, as I use it but I'd like to
+                                become better at it. </p>
+                            <p>Other than these, I unfortunately daily use Css & Sass - but please ignore this
+                                information,
+                                the tech thing I utterly hate the most is Css and everything concerning it. If you want
+                                me to mostly work on Css-things, well, you're messing with the wrong guy mate. 😤
+                                I used some <span class="bold">Docker e Kubernetes</span>
+                                but I'm still a nearly newbie (they're a quite complex new world to approach).
+                            </p>
+                            <h4>Other than...</h4>
                             <p>
-                                <!-- In a past life I was an art historian (well, not really - I just have a Master's degree in Art History). -->
-                                Precedentemente mi sono laureato al corso di <span class="bold">Laurea Magistrale in
-                                    Storia
-                                    dell'Arte</span>. Negli ultimi anni di università ho anche
-                                lavorato come traduttore freelance - se sei curioso, sopra trovi
-                                il mio CV e nel portfolio le mie tesi.
+                                In a past life I was an art historian (well, not really - I just have a Master's degree
+                                in Art History).
+                                I also worked as a freelance translator during my master's degree - if you're
+                                interested, you can find more in my CV while in my portfolio I put a link to my thesis.
                             </p>
-                            <p>Per darti qualche info meno asettica ti dico che: fin da piccolo
-                                sono un avido lettore, sia di libri che di fumetti; sono un
-                                videogiocatore incallito since psX, passando poi per ps2/3/4 e
-                                Nintendo Ds (e discendenti); mi
-                                intendo di calcio, senza più seguirlo (troppo) come un tempo. La
-                                cosa che meglio incarna la mia anima è l'<span class="bold">atmosfera che
-                                    si respira
-                                    in
+                            <p>Since I was a little kid I've been an eager reader, both books and comics;
+                                I'm a heavy videogamer since psX, gone throught the ps2/3/4 era always with a gamepad
+                                (or a Nintendo DS) in hand; I know about football, without being a fan as I were in my
+                                youth.</p>
+                            <p>To better understand my soul and my personality, the thing that embodies myself the most
+                                is the <span class="bold">atmosphere you deeply breath, to the bottom of your lungs,
+                                    when you walk in
                                     <a href="https://www.youtube.com/watch?v=kSRIlwXDBB4" target="blank">Ico</a></span>
-                                - 'nuff said.
+                                classic videogame
+                                - 'nuff said. If you're one like me, you'll have already understood.
                             </p>
                         </div>
                     </div>
@@ -146,19 +211,19 @@
                         <img class="d-block w-100" src="img/slider1.jpg" alt="First slide">
                         <div class="carousel-caption">
                             <p>What I Mostly Work With:</p>
-                            <h4>.Net/C# - PHP</h4>
-                            <h4>Javascript, JQuery</h4>
-                            <h4>SQL Lang. & Database</h4>
+                            <h4>C#, on .Net Core & Framework</h4>
+                            <h4>Javascript, React</h4>
+                            <h4>Git, SQL Server, MongoDB</h4>
                         </div> //aggiungi studying.. typescript etc
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="img/slid3.jpg" alt="Second slide">
                         <div class="carousel-caption">
-                            <p>Also Used/Studied:</p>
-                            <h4>Java - MongoDB - Html&CSS</h4>
-                            <h4>Cloud Infrastructure (AWS, Azure) - <a
-                                    href="https://google.qwiklabs.com/public_profiles/6f44c796-3e35-4d4a-a5fa-25c96715bc6d"
-                                    target="blank">Docker, Kubernetes</h4></a>
+                            <p>Also with...</p>
+                            <h4>Html, CSS (Sass), Typescript</h4>
+                            <h4>Cloud Infrastructure (AWS, Azure)</h4>
+                            <h4><a href="https://google.qwiklabs.com/public_profiles/6f44c796-3e35-4d4a-a5fa-25c96715bc6d"
+                                    target="blank">Docker, Kubernetes</a></h4>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -180,14 +245,15 @@
                     <div class="carousel-item">
                         <img class="d-block w-100" src="img/slid2.jpg" alt="Fourth slide">
                         <div class="bold carousel-caption">
-                            <p>Corso Integrated Backend Service - <a
+                            <p>Integrated Backend Service course - <a
                                     href="http://www.its-ictpiemonte.it/courses/backend-development/" target="blank">ITS
                                     ICT
                                     Piemonte</a></p>
-                            <p>V Level QEQ - Diploma di Tecnico Superiore per lo Sviluppo Software</p>
+                            <p><span class="bold">V Level QEQ</span> - Diploma di Tecnico Superiore per lo Sviluppo
+                                Software</p>
                             <button id="itsCourse" type="button" class="btn btn-sm btn-secondary" data-toggle="popover"
-                                data-trigger="focus" data-placement="left" data-html="true" title="Corsi">Mostra tutti i
-                                Corsi Sostenuti</button>
+                                data-trigger="focus" data-placement="left" data-html="true" title="Stuies">
+                                View courses</button>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -201,70 +267,7 @@
                 </div>
         </section>
     </div>
-    <div id="portfolio" class="wrapper clearfix">
-        <section>
-            <div>Under Construction</div>
-            <ul id="gallery">
-                <!-- <li>
-                    <a href="https://github.com/followynne/ITS_sqlFinalExam" target="blank">
-                        <img src="img/ecommerce.png" alt="img4">
-                        <p class="italic">Applicativo di Gestione E-Commerce, con DatabaseModel Incluso</p>
-                        <p>Scritto in C#, DB pensato per Microsoft SQLSERVER 2017</p>
-                        <p>Gestisce le 4 op. CRUD sul DB.</p>
-                        <p>Permette la visualizzazione del contenuto del DB, tramite ricerca singola o di categoria.
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/followynne/ITS_webMemory" target="blank">
-                        <img src="img/memory.gif" alt="img4">
-                        <p>Memory Game - realizzato in Javascript e JQuery, con chiamate Ajax a JsonData</p>
-                        <p>Il normale gioco del Memory scritto in Js e JQuery. Le carte vengono popolate tramite
-                            chiamata Ajax a un Json Document, che contiene i path delle img. Dotato di punteggio,
-                            salva in locale il risultato più alto del giocatore.
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/followynne/ITS_csharpCodFiscale" target="blank">
-                        <img src="img/codfiscale.png" alt="img4">
-                        <p>Applicativo per il Calcolo del Codice Fiscale Italiano</p>
-                        <p>Realizzato in C#, non comprende i casi di omocodia. </br> NB: Non è certificata la
-                            correttezza dei dati emessi.
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <img src="img/modellositocalcio.png" alt="img4">
-                    <p>Modello 1: Sito Squadra di Calcio</p>
-                    <p>Prova di Apprendimento HTML&CSS</p>
-                    <p><a href="https://followynne.github.io/PrimaProva_OnePage" target="blank">One Page</a> - <a
-                            href="https://followynne.github.io/PrimaProva/" target="blank">Classic</p></a>
-                </li> -->
-                <li>
-                    <a href="https://www.academia.edu/36116547/Julio_Castellanos_e_i_Contempor%C3%A1neos"
-                        target="blank">
-                        <img src="img/tesilt.jpeg" alt="img2"></a>
-                    <p class="italic">Julio Castellanos e i Contemporáneos</p>
-                    <p>Tesi Triennale, relatore: dr. <a href="http://www.mariosartor.com" target="blank">Mario
-                            Sartor</a>
-                    </p>
-                </li>
-                <li>
-                    <a href="https://www.academia.edu/36116548/Il_conceptualismo_ideol%C3%B3gico_nell_Argentina_degli_anni_70_analisi_dell_operato_del_Grupo_CAYC"
-                        target="blank">
-                        <img src="img/tesilm.jpg" alt="img3"></a>
-                    <p class="italic">Il conceptualismo ideológico nell’Argentina degli anni ‘70: analisi
-                        dell’operato del Grupo CAYC
-                    </p>
-                    <p>Tesi Magistrale, relatore: dr.
-                        <a href="http://portal.uc3m.es/portal/page/portal/dpto_hum_geo_hist_arte/Miembros_nueva/jose_luis_de_la_nuez_santana"
-                            target="blank">José Luis De la Nuez Santana</a>
-                    </p>
-                </li>
-            </ul>
-        </section>
-    </div>
+
     <footer id="contact" class="main-footer">
         <a href="mailto:matteo.gregoricchio@mail.com">
             <img src="img/mail-ic2.png" alt="mail" class="icona_social"></a>

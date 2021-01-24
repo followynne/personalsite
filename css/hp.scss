@@ -49,21 +49,40 @@
   padding: 50px 3% 20px 3%;
 }
 
+.section-title {
+  position: absolute;
+  font-weight: 600;
+  top: 25px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 img {
   max-width: 100%;
 }
 
 #portfolio {
-  background-color: rgba(181, 201, 240, 0.151);
+  background-image: url('../img/backgroundjob.png');
+  position: relative;
 }
 
 #gallery {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 
   img {
     max-width: 100%;
+    height: 60%;
+
+    @include main.min-tablet-width() {
+      max-width: 100%;
+      height: unset;
+    }
+
+    @include main.min-desktop-width() {
+      max-width: 70%;
+    }
   }
 
   p a {
@@ -72,11 +91,12 @@ img {
 
   li {
     float: left;
-    width: 45%;
-    height: 300px;
+    width: 95%;
+    height: 200px;
     overflow: auto;
     margin: 2.5%;
-    background-color: rgba(255, 255, 255);
+    background: rgba(0, 0, 0, 0.1);  
+    border-radius: 5px;
     position: relative;
     text-align: center;
 
@@ -88,10 +108,7 @@ img {
     ***************************/
     @include main.min-tablet-width() {
       width: 28.33333%;
-    }
-
-    @include main.min-desktop-width() {
-      width: 20%;
+      height: 300px;
     }
 
     &::-webkit-scrollbar {
@@ -102,8 +119,14 @@ img {
       font-size: 0.83em;
       color: #000000;
       font-weight: bold;
-      padding: 2%;
+      padding: 0.3em;
       margin: 0;
+    }
+
+    &.hidden-portfolio-li {
+      @include main.max-mobile-width() {
+        display: none;
+      }
     }
   }
 }
@@ -118,10 +141,14 @@ ABOUT
     padding: 30px 0 40px 0;
   }
 
-  p {
+  p, h4 {
     color: #ffffff;
     text-align: justify;
     line-height: 1.3rem;
+  }
+
+  p {
+    font-size: large;
   }
 
   a {
@@ -193,6 +220,7 @@ PERSONAL INFO & CAROUSEL
       font-size: 0.8rem;
       line-height: 0.9rem;
       font-weight: 700;
+      padding-bottom: 50px;
     }
 
     .no-back {
