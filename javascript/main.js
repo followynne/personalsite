@@ -5,7 +5,6 @@ import 'bootstrap/dist/js/bootstrap';
 
 const printDate = () => {
     let date = new Date();
-    console.log('past');
     $('#currentYearPrint').append(date.getFullYear());
 };
 
@@ -25,7 +24,7 @@ const printDate = () => {
       {
         scrollTop: $(link).offset().top,
       },
-      'slow',
+      1200,
     );
   });
 

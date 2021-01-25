@@ -34,7 +34,7 @@
     margin: 0 auto;
     padding-top: 1.2rem;
     padding-bottom: 5px;
-    
+
     &:not(:last-child) {
       border-bottom: 0.03rem solid #eaecef;
     }
@@ -83,4 +83,8 @@
       background-color: rgba(155, 42, 27, 0.603);
     }
   }
+}
+
+.pin-down {
+  margin-top: 120px;
 }
