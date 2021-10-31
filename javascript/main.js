@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap';
 
 const printDate = () => {
-    let date = new Date();
-    $('#currentYearPrint').append(date.getFullYear());
+  let date = new Date();
+  $('#currentYearPrint').append(date.getFullYear());
 };
 
 (() => {
