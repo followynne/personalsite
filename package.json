@@ -1,7 +1,17 @@
 {
   "name": "personal-site",
   "version": "1.0.0",
+  "author": "Matteo Gregoricchio",
   "description": "Matteo Gregoricchio personal site.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/followynne/PersonalSite.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/followynne/PersonalSite/issues"
+  },
+  "homepage": "https://github.com/followynne/PersonalSite#readme",
   "targets": {
     "app": {
       "distDir": "./dist"
@@ -12,26 +22,20 @@
     "predeploy": "rm -rf dist && parcel build ./*.html ./articles/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist && cp sitemap.xml ./dist",
     "deploy": "gh-pages -d dist"
   },
-  "dependencies": {
-    "bootstrap": "^4.6.0",
-    "gh-pages": "^3.1.0",
-    "github-markdown-css": "^4.0.0",
-    "jquery": "^3.5.1",
-    "parcel": "^2.0.0-nightly.551",
-    "popper.js": "^1.16.1"
-  },
   "devDependencies": {
-    "cssnano": "^4.1.10",
-    "sass": "^1.32.5"
+    "@parcel/transformer-sass": "^2.0.0",
+    "@types/bootstrap": "^5.1.6",
+    "@types/jquery": "^3.5.8",
+    "cssnano": "^5.0.8",
+    "gh-pages": "^3.2.3",
+    "github-markdown-css": "^5.0.0",
+    "parcel": "^2.0.0",
+    "posthtml-expressions": "^1.9.0",
+    "posthtml-include": "^1.7.2",
+    "sass": "^1.43.4"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/followynne/PersonalSite.git"
-  },
-  "author": "Matteo Gregoricchio",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/followynne/PersonalSite/issues"
-  },
-  "homepage": "https://github.com/followynne/PersonalSite#readme"
+  "dependencies": {
+    "@popperjs/core": "^2.10.2",
+    "bootstrap": "^5.1.3"
+  }
 }

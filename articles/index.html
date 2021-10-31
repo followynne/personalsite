@@ -1,95 +1,48 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144547471-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <head>
+    <include src="shared-templates/head.html" locals='{
+      "pageTitle": "How-To, articles & guides"
+    }'></include>
+    <link rel="stylesheet" type="text/css" href="/css/articles.scss">
+  </head>
 
-        gtag('config', 'UA-144547471-1');
-    </script>
-
-    <meta charset="utf-8">
-    <title>How-To, articles & guides</title>
-    <!-- 16*16px l'icona da logo; serve salvarla poi in formato .ico es favicon -->
-    <link rel="shortcut icon" type="image/x-con" href="../img/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/articles.scss">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <header class="main-header clearfix">
-        <a href="https://www.matteogregoricchio.com" id="logo">
-            <h1>Matteo Gregoricchio</h1>
-            <h2>Developer</h2>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="https://www.matteogregoricchio.com">Home</a></li>
-                <li><a href="./">Articles</a></li>
-                <li><a href="#contact" class="scroll">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <body>
+    <include src="shared-templates/header-article.html"></include>
     <div class="banner-tut markdown-body content">
-        <h3 class="text-center">Articles List</h3>
-        <section>
-            <div>On this page you'll find a list of articles published on this site.</div>
-            <div>If you have any question or correction to make, write me by your preferred channel within
-                those you find down there!
-            </div>
-            <ul>
-                <li><a href="./github-pages-hosting-with-parcel" class="bold">How to host a site using Github Pages and
-                        Parcel </a>(last updated: 13-01-2021)</li>
-            </ul>
-        </section>
-        <section>
-            <div id="disqus_thread" class="pin-down"></div>
-        </section>
+      <h3 class="text-center">Articles List</h3>
+      <section>
+        <div>On this page you'll find a list of articles published on this site.
+        </div>
+        <div>If you have any question or correction to make, write me by your
+          preferred channel within
+          those you find down there!
+        </div>
+        <ul>
+          <each loop="article in [
+            { url: 'github-pages-hosting-with-parcel', lastUpd: '13-01-2021',
+              text: 'How to host a site using Github Pages and Parcel',
+            },
+          ]">
+            <li>
+              <a href="{{article.url}}" class="bold">{{article.text}}</a>
+              (last updated: {{article.lastUpd}})
+            </li>
+          </each>
+        </ul>
+      </section>
+      <section>
+        <div id="disqus_thread" class="pin-down"></div>
+      </section>
     </div>
-    <footer id="contact" class="main-footer">
-        <a href="mailto:matteo.gregoricchio@mail.com">
-            <img src="../img/mail-ic2.png" alt="mail" class="icona_social"></a>
-        <a href="https://t.me/MatteoGregoric">
-            <img src="../img/teleg-ic.png" alt="telegram" class="icona_social"></a>
-        <a href="https://github.com/followynne">
-            <img src="../img/icon_github.png" alt="profilegithub" class="icona_social"></a>
-        <a href="https://www.linkedin.com/in/matteo-gregoricchio">
-            <img src="../img/icon_linkedin.png" alt="profilelinkedin" class="icona_social"></a>
-        <a href="https://www.upwork.com/o/profiles/users/_~01ca9d34312f7fa73d/">
-            <img src="../img/icon_instagram.png" alt="profileinstagram" class="icona_social"></a>
-        <a href="https://psnprofiles.com/wigghi92">
-            <img src="../img/icon_ps.png" alt="profileplaystation" class="icona_social"></a>
-        </br></br>
-        <p id="currentYearPrint"><a href="../img/easteregg.jpg" alt="easteregg">Matteo Gregoricchio</a> &copy; 1992-</p>
-    </footer>
-    <script src="../javascript/main.js"></script>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        */
-        var disqus_config = function () {
-            // Replace PAGE_URL with your page's canonical URL variable
-            this.page.url = 'https://www.matteogregoricchio.com/articles/';
-            // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            this.page.identifier = 'articles-list';
-        };
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://matteo-gregoricchio.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a>
-    </noscript>
-</body>
+
+    <include src="shared-templates/footer.html"></include>
+    <include src="shared-templates/disqus.html" locals='{
+      "pageUrl": "https://www.matteogregoricchio.com/articles/",
+      "pageIdentifier": "articles-list"
+    }'></include>
+
+  </body>
 
 </html>

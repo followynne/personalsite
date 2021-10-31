@@ -1,133 +1,146 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144547471-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+  <head>
+    <include src="shared-templates/head.html" locals='{
+      "pageTitle": "How to... host a site using Github Pages and Parcel"
+    }'></include>
+    <link rel="stylesheet" type="text/css" href="/css/articles.scss">
+  </head>
 
-        gtag('config', 'UA-144547471-1');
-    </script>
-    <meta charset="utf-8">
-    <title>How to... host a site using Github Pages and Parcel</title>
-    <meta name="description" content="Learn how to host your site for free using Github Pages and Parcel.">
-    <!-- 16*16px l'icona da logo -->
-    <link rel="shortcut icon" type="image/x-con" href="../img/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../css/articles.scss">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-
-<body>
-    <header class="main-header clearfix">
-        <a href="https://www.matteogregoricchio.com" id="logo">
-            <h1>Matteo Gregoricchio</h1>
-            <h2>Developer</h2>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="https://www.matteogregoricchio.com">Home</a></li>
-                <li><a href="./">Articles</a></li>
-                <li><a href="#contact" class="scroll">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <body>
+    <include src="shared-templates/header-article.html"></include>
     <div class="banner-tut">
-        <article class="markdown-body">
-            <h1>How to... host a site using Github Pages and Parcel</h1>
-            <h2>Aye mate! If you are here, you want to deploy & publish a site using the free hosting offered by <a
-                    href="https://www.github.com">Github </a>
-                and <a href="https://parceljs.org/">Parcel</a>, the latter as the bundler for all the
-                packages/libraries you use in your site 😊</h2>
-            <section id="intro">
-                <div>If you're a beginner (as I were some months ago), you may be questioning, why do I need an
-                    hosting service and a bundler? Let me answer in the quickest & simplest way I can (click <a
-                        href="#guide">Here</a> to go straight to the point instead).</br>
-                    <b>An hosting service is a service that will actually <i>hosts</i> all the files of your site and
-                        expose
-                        them for public access.</b> Without this service, you would need to expose
-                    those files constantly to the world from your laptop! When you start messing around, it's very nice
-                    to
-                    have a free and good hosting service that you can use directly
-                    from your repository - that's where <a href="https://pages.github.com/">Github Pages</a> comes in
-                    handy.</br>
-                    <b>A bundler is a tool that helps to bundle modules (libraries, a.k.a. reusables pieces of code) you
-                        use
-                        in
-                        your application in files ready to be included in your web pages and to be read by browsers.</b>
-                    Many bundlers exist for Javascript but Parcel has the great strength of being really
-                    <b>straight-forward and simple</b> to use! At the start of a web development career, you'll want to
-                    use
-                    libraries, frameworks, without additional overhead for their usage.<br />Bundlers like Webpack have
-                    a
-                    steep learning
-                    curve, due to its great customization
-                    options, and aren't really the best option for newcomers or small sites. Parcel, on the other hand,
-                    is
-                    simple to use
-                    and really good to start working on your skills!
-                </div>
-                <div class="alert alert-warning width-reduce"><i><b>Note</b>: When you feel ready, you can start
-                        reading
-                        more on bundlers from this
-                        great source:
-                        <a
-                            href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Package_management">
-                            MDN Package Management</a>! Don't rush it, as it's quite an intermediate topic, but keep in
-                        mind
-                        to
-                        give it a look,
-                        it's an important topic to know.<span class="title">In-depth Corner</span></i>
-                </div>
-                <a href="https://en.wikipedia.org/wiki/WYSIWYG" class="bold">WYSIWYG</a>: you're about to read a <span
-                    class="bold">simple guide</span> that uses
-                Parcel to
-                bundle all those libraries and deploy the built pages on the <span class="bold italic">gh-pages
-                    branch</span>
-                branch of your Github repo, ready for the world to read it.</br>
-            </section>
-            <section id="requirements">
-                <h3>Requirements</h3>
-                <div>For this tutorial, you'll need to have:
-                    <ul>
-                        <li>a Github account (<a href="https://guides.github.com/activities/hello-world/">Hello World on
-                                Github)</a></li>
-                        <li><a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Nodejs & npm
-                                (the
-                                Javascript package manager we'll use to
-                                install libraries and use parcel)</a></li>
-                        <li> <a href="https://parceljs.org/getting_started.html">Parcel</a></li>
-                    </ul>
-                    Follow the links if you need help on those ones.<br />
-                    <div class="text-bold">At <a strong
-                            href="https://github.com/followynne/github-pages-hosting-with-parcel" target="_blank">this
-                            page</a> you can find the
-                        code of a basic site that was created with this tutorial. You can check it live at <a
-                            href="https://followynne.github.io/github-pages-hosting-with-parcel/" target="_blank">Live
-                            Example</a>!</div>
-                    <div class="alert alert-info width-reduce">A note: <span class="text-bold text-">$</span> identifies
-                        code lines in a
-                        Shell/Terminal - when you paste the code lines in the shell, leave out the starting $.</br>
-                        You'll find all the instructions and commands inside a <code>code</code> section!<span
-                            class="title">In-depth Corner</span></div>
-                </div>
-            </section>
-            <section id="guide">
-                <h3>Guide</h3>
-                <div>Okay, let's start assuming you have created your Hello World Site. You've created all the folders
-                    for your files, you've got your nice index.html ready and working, with the stylesheets and scripts
-                    correctly referenced inside.</br> You uploaded it on GitHub and it looks neat.</br> Let's assume you
-                    now want to use Bootstrap and JQuery without using a CDN, therefore you'll use a package manager and
-                    will create a bundle for your files and libraries 😊.</div>
-                <ol>
-                    <li>
-                        <div>Install Node.js (that comes with npm) and then proceed to <b>install the libraries</b> you
-                            need
-                            from the terminal:</div>
-                        <pre lang="no-highlight">
+      <article class="markdown-body">
+        <h1>How to... host a site using Github Pages and Parcel</h1>
+        <h2>Aye mate! If you are here, you want to deploy & publish a site using
+          the free hosting offered by <a href="https://www.github.com">Github
+          </a>
+          and <a href="https://parceljs.org/">Parcel</a>, the latter as the
+          bundler for all the
+          packages/libraries you use in your site 😊</h2>
+        <section id="intro">
+          <div>If you're a beginner (as I were some months ago), you may be
+            questioning, why do I need an
+            hosting service and a bundler? Let me answer in the quickest &
+            simplest way I can (click <a href="#guide">Here</a> to go straight
+            to the point instead).</br>
+            <b>An hosting service is a service that will actually <i>hosts</i>
+              all the files of your site and
+              expose
+              them for public access.</b> Without this service, you would need
+            to expose
+            those files constantly to the world from your laptop! When you start
+            messing around, it's very nice
+            to
+            have a free and good hosting service that you can use directly
+            from your repository - that's where <a
+              href="https://pages.github.com/">Github Pages</a> comes in
+            handy.</br>
+            <b>A bundler is a tool that helps to bundle modules (libraries,
+              a.k.a. reusables pieces of code) you
+              use
+              in
+              your application in files ready to be included in your web pages
+              and to be read by browsers.</b>
+            Many bundlers exist for Javascript but Parcel has the great strength
+            of being really
+            <b>straight-forward and simple</b> to use! At the start of a web
+            development career, you'll want to
+            use
+            libraries, frameworks, without additional overhead for their
+            usage.<br />Bundlers like Webpack have
+            a
+            steep learning
+            curve, due to its great customization
+            options, and aren't really the best option for newcomers or small
+            sites. Parcel, on the other hand,
+            is
+            simple to use
+            and really good to start working on your skills!
+          </div>
+          <div class="alert alert-warning width-reduce"><i><b>Note</b>: When you
+              feel ready, you can start
+              reading
+              more on bundlers from this
+              great source:
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Package_management">
+                MDN Package Management</a>! Don't rush it, as it's quite an
+              intermediate topic, but keep in
+              mind
+              to
+              give it a look,
+              it's an important topic to know.<span class="title">In-depth
+                Corner</span></i>
+          </div>
+          <a href="https://en.wikipedia.org/wiki/WYSIWYG"
+            class="bold">WYSIWYG</a>: you're about to read a <span
+            class="bold">simple guide</span> that uses
+          Parcel to
+          bundle all those libraries and deploy the built pages on the <span
+            class="bold italic">gh-pages
+            branch</span>
+          branch of your Github repo, ready for the world to read it.</br>
+        </section>
+        <section id="requirements">
+          <h3>Requirements</h3>
+          <div>For this tutorial, you'll need to have:
+            <ul>
+              <li>a Github account (<a
+                  href="https://guides.github.com/activities/hello-world/">Hello
+                  World on
+                  Github)</a></li>
+              <li><a
+                  href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">Nodejs
+                  & npm
+                  (the
+                  Javascript package manager we'll use to
+                  install libraries and use parcel)</a></li>
+              <li> <a
+                  href="https://parceljs.org/getting_started.html">Parcel</a>
+              </li>
+            </ul>
+            Follow the links if you need help on those ones.<br />
+            <div class="text-bold">At <a strong
+                href="https://github.com/followynne/github-pages-hosting-with-parcel"
+                target="_blank">this
+                page</a> you can find the
+              code of a basic site that was created with this tutorial. You can
+              check it live at <a
+                href="https://followynne.github.io/github-pages-hosting-with-parcel/"
+                target="_blank">Live
+                Example</a>!</div>
+            <div class="alert alert-info width-reduce">A note: <span
+                class="text-bold text-">$</span> identifies
+              code lines in a
+              Shell/Terminal - when you paste the code lines in the shell, leave
+              out the starting $.</br>
+              You'll find all the instructions and commands inside a
+              <code>code</code> section!<span class="title">In-depth
+                Corner</span>
+            </div>
+          </div>
+        </section>
+        <section id="guide">
+          <h3>Guide</h3>
+          <div>Okay, let's start assuming you have created your Hello World
+            Site. You've created all the folders
+            for your files, you've got your nice index.html ready and working,
+            with the stylesheets and scripts
+            correctly referenced inside.</br> You uploaded it on GitHub and it
+            looks neat.</br> Let's assume you
+            now want to use Bootstrap and JQuery without using a CDN, therefore
+            you'll use a package manager and
+            will create a bundle for your files and libraries 😊.</div>
+          <ol>
+            <li>
+              <div>Install Node.js (that comes with npm) and then proceed to
+                <b>install the libraries</b> you
+                need
+                from the terminal:
+              </div>
+              <pre lang="no-highlight">
 <code>$ cd "your_folder_path"
 $ npm init
 $ npm i parcel
@@ -135,197 +148,203 @@ $ npm i bootstrap
 $ npm i popper.js
 $ npm i jquery</code>
 </pre>
-                        <div class="alert alert-warning width-reduce">As you can see, at line 3 I made you install
-                            Parcel. You can also
-                            install
-                            it as a global package by typing <code class="text-bold">$ npm i parcel -g</code>
-                            instead.<br />If you
-                            choose to install it
-                            globally, you'll be able to use it on different projects without needing to reinstall it
-                            each
-                            time. In
-                            this case, it's recommended to include parcel as a <a
-                                href="https://flaviocopes.com/npm-peer-dependencies/"
-                                target="_blank">peer-dependency</a> in
-                            your
-                            package.json.<span class="title">In-depth Corner</span>
-                        </div>
-                    </li>
-                    <li>
-                        With <code>npm init</code> you create a package.json by filling the input provided. <b>Add the
-                            following lines to your package.json</b>:
-                        <pre>
+              <div class="alert alert-warning width-reduce">As you can see, at
+                line 3 I made you install
+                Parcel. You can also
+                install
+                it as a global package by typing <code
+                  class="text-bold">$ npm i parcel -g</code>
+                instead.<br />If you
+                choose to install it
+                globally, you'll be able to use it on different projects without
+                needing to reinstall it
+                each
+                time. In
+                this case, it's recommended to include parcel as a <a
+                  href="https://flaviocopes.com/npm-peer-dependencies/"
+                  target="_blank">peer-dependency</a> in
+                your
+                package.json.<span class="title">In-depth Corner</span>
+              </div>
+            </li>
+            <li>
+              With <code>npm init</code> you create a package.json by filling
+              the input provided. <b>Add the
+                following lines to your package.json</b>:
+              <pre>
 <code>"scripts": {
     "start": "parcel ./*.html",
     "predeploy": "rm -rf dist && parcel build ./*.html --public-url "paste here your ENTIRE REPO URL, comprehensive of http/https part"",
     "deploy": "gh-pages -d dist"
 },</code></pre>
-                        <b>scripts</b> is a JSON property of package.json where you can write shell commands and
-                        reference
-                        them
-                        with
-                        aliases from npm. Aliases are way easier to use and remember than the entire commands you'll
-                        use.
-                        You'll call them by writing <code>npm run {script_key}</code>. We'll understand in
-                        a second what these lines mean.
-                    </li>
-                    <li>At the start of your Javascript entry point you require the libraries:
-                        <pre lang="no-highlight">
+              <b>scripts</b> is a JSON property of package.json where you can
+              write shell commands and
+              reference
+              them
+              with
+              aliases from npm. Aliases are way easier to use and remember than
+              the entire commands you'll
+              use.
+              You'll call them by writing <code>npm run {script_key}</code>.
+              We'll understand in
+              a second what these lines mean.
+            </li>
+            <li>At the start of your Javascript entry point you require the
+              libraries:
+              <pre lang="no-highlight">
 <code>// index.js
 import $ from 'jquery'
 import 'popper.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap'</code></pre> and then, in the same .js file you write a simple function to test
-                        that the
-                        import works:
-                        <pre lang="no-highlight">
+import 'bootstrap/dist/js/bootstrap'</code></pre> and then, in the same .js
+              file you write a simple function to test
+              that the
+              import works:
+              <pre lang="no-highlight">
 <code>// index.js
 $(document).ready(()=>{
     $('body').html('Hello World, if you see this message Parcel Bundler and Github Hosting are working nicely!');
 })</code></pre>
-                        You can now run Parcel with <code>$ npm run start</code> and magic, something happens!
-                        <div>Parcel will build and host your files on a local port, thus you'll now be able to browse
-                            your
-                            site at
-                            <i>localhost:{port}</i> (replace port with the one you can read in the terminal). When you
-                            open
-                            the
-                            page
-                            you'll find that your site is working!
-                        </div>
-                        <div class="alert alert-info width-reduce"><span class="text-bold">npm run start</span> is the
-                            first alias we
-                            use, when we call it it will simply run parcel with an argument relative to the entry points
-                            of
-                            the application.<br />
-                            <i>./*.html</i> is a glob pattern with a wildcard that stands for: build all the .html
-                            extension files you find in the folder from where you run the command. If you have html in
-                            sub-folders, you can add other globs to the command like ./{folder}/*.html (Parcel will
-                            interpret it
-                            as a list of entries to search). <span class="title">In-depth Corner</span>
-                        </div>
-                        We have our site running fine with all the built libraries and now we want to publish it using
-                        Github-Pages Hosting.
-                    </li>
-                    <li>First thing, in the <i>.gitignore</i> let's add those lines:
-                        <pre lang="no-highlight">
+              You can now run Parcel with <code>$ npm run start</code> and
+              magic, something happens!
+              <div>Parcel will build and host your files on a local port, thus
+                you'll now be able to browse
+                your
+                site at
+                <i>localhost:{port}</i> (replace port with the one you can read
+                in the terminal). When you
+                open
+                the
+                page
+                you'll find that your site is working!
+              </div>
+              <div class="alert alert-info width-reduce"><span
+                  class="text-bold">npm run start</span> is the
+                first alias we
+                use, when we call it it will simply run parcel with an argument
+                relative to the entry points
+                of
+                the application.<br />
+                <i>./*.html</i> is a glob pattern with a wildcard that stands
+                for: build all the .html
+                extension files you find in the folder from where you run the
+                command. If you have html in
+                sub-folders, you can add other globs to the command like
+                ./{folder}/*.html (Parcel will
+                interpret it
+                as a list of entries to search). <span class="title">In-depth
+                  Corner</span>
+              </div>
+              We have our site running fine with all the built libraries and now
+              we want to publish it using
+              Github-Pages Hosting.
+            </li>
+            <li>First thing, in the <i>.gitignore</i> let's add those lines:
+              <pre lang="no-highlight">
 <code>// we will ignore node_modules, dist (the output folder you won't track) and the .cache (parcel working folder) 
 node_modules/
 dist
 .cache</code></pre>
-                        We then install a new package from npm that will take care of
-                        pushing the built code to the gh-pages branch on your remote repository:
-                        <pre lang="no-highlight"><code>$ npm install gh-pages</code></pre>
-                        Let's create a Github-Pages branch, push to your remote repo and the switch back:
-                        <pre lang="no-highlight">
+              We then install a new package from npm that will take care of
+              pushing the built code to the gh-pages branch on your remote
+              repository:
+              <pre lang="no-highlight"><code>$ npm install gh-pages</code></pre>
+              Let's create a Github-Pages branch, push to your remote repo and
+              the switch back:
+              <pre lang="no-highlight">
 <code>$ git branch gh-pages
 $ git checkout gh-pages
 $ git push origin gh-pages
 $ git checkout master
 </code></pre>
-                    </li>
-                    <li>We're back on the main branch, with our gh-pages running (you can check that the page is online
-                        in
-                        your online repo, by going to Settings. Github should publish it by default when it finds the
-                        gh-pages branch. If you need further help check <a
-                            href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site">the
-                            documentation</a>).</br>
-                        It's now time to review the other two lines of the "scripts" section we added before.
-                        <div class="alert alert-info width-reduce"><span class="title">In-depth Corner</span>What are we
-                            doing? We are
-                            creating a script for npm that will execute those commands:
-                            <div><b>Pre-Deploy</b>: it will delete the previous dist folder (the folder where are
-                                located
-                                the processed parcel files) + it will build the site from your entry point. With
-                                public-url
-                                you set the dns name of your site.</div>
-                            <div><b>Deploy</b>: it will use gh-pages package to re-create the gh-pages branch based on
-                                the
-                                dist
-                                folder and it will "commit&push" it to your remote repo.</div>
-                        </div>
-                        <div class="alert alert-danger width-reduce"><b><span
-                                    class="title-warning">WARNING!</span>Please Note: if you
-                                have a CNAME file, containing the personalized url of your
-                                site, you !MUST! substitute the "predeploy" line in the last snippet with:</b>
-                            <pre
-                                lang="no-highlight"><code>"predeploy": "rm -rf dist && parcel build index.html --public-url "paste here your PERSONAL url, comprehensive of http/https part" && cp CNAME ./dist"</code></pre>
-                            This instruction will make Parcel build your page on the specified url and it will copy the
-                            CPNAME file in the dist folder - this way you'll be able to presist the CNAME and map the
-                            custom
-                            domain
-                            you're using. <br />You can apply the same command for every file you need to include in
-                            your
-                            hosted files.
-                        </div>
-                    </li>
-                    <li>The job is now easy: you work on your site by running <code>npm run start</code> script, that
-                        use
-                        the Parcel local dev server.
-                        <div>Every time you have a new version ready to deploy, you type this command in Terminal:
-                            <pre lang="no-highlight"><code>$ npm run deploy</code></pre>
-                            Parcel will run, build the site and deploy it to GitHub with all the dependencies you used
-                            and are needed by your scripts. Fast, easy, good to go!
-                        </div>
-                    </li>
-                </ol>
-            </section>
-            <section>
-                <h3>Thanks for reading!</h3>
-                <div>This small guide is a simple start point for your site. I felt interesting to write it because it
-                    helps
-                    a newcomer to start messing around with web development and, at the same time, I cited and wrote
-                    some
-                    concepts that a new dev will read as an appetizer, hopefully giving him the curiosity to search
-                    more!
-                    That's what I did and nowadays still do with articles.</div>
-                <div>If you have any question, doubt, comment, feel free to write me down below on Disqus, at my
-                    mail or to my socials! 😊</div>
-            </section>
-            <section>
-                <div id="disqus_thread"></div>
-            </section>
-        </article>
+            </li>
+            <li>We're back on the main branch, with our gh-pages running (you
+              can check that the page is online
+              in
+              your online repo, by going to Settings. Github should publish it
+              by default when it finds the
+              gh-pages branch. If you need further help check <a
+                href="https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/creating-a-github-pages-site">the
+                documentation</a>).</br>
+              It's now time to review the other two lines of the "scripts"
+              section we added before.
+              <div class="alert alert-info width-reduce"><span
+                  class="title">In-depth Corner</span>What are we
+                doing? We are
+                creating a script for npm that will execute those commands:
+                <div><b>Pre-Deploy</b>: it will delete the previous dist folder
+                  (the folder where are
+                  located
+                  the processed parcel files) + it will build the site from your
+                  entry point. With
+                  public-url
+                  you set the dns name of your site.</div>
+                <div><b>Deploy</b>: it will use gh-pages package to re-create
+                  the gh-pages branch based on
+                  the
+                  dist
+                  folder and it will "commit&push" it to your remote repo.</div>
+              </div>
+              <div class="alert alert-danger width-reduce"><b><span
+                    class="title-warning">WARNING!</span>Please Note: if you
+                  have a CNAME file, containing the personalized url of your
+                  site, you !MUST! substitute the "predeploy" line in the last
+                  snippet with:</b>
+                <pre
+                  lang="no-highlight"><code>"predeploy": "rm -rf dist && parcel build index.html --public-url "paste here your PERSONAL url, comprehensive of http/https part" && cp CNAME ./dist"</code></pre>
+                This instruction will make Parcel build your page on the
+                specified url and it will copy the
+                CPNAME file in the dist folder - this way you'll be able to
+                presist the CNAME and map the
+                custom
+                domain
+                you're using. <br />You can apply the same command for every
+                file you need to include in
+                your
+                hosted files.
+              </div>
+            </li>
+            <li>The job is now easy: you work on your site by running
+              <code>npm run start</code> script, that
+              use
+              the Parcel local dev server.
+              <div>Every time you have a new version ready to deploy, you type
+                this command in Terminal:
+                <pre lang="no-highlight"><code>$ npm run deploy</code></pre>
+                Parcel will run, build the site and deploy it to GitHub with all
+                the dependencies you used
+                and are needed by your scripts. Fast, easy, good to go!
+              </div>
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h3>Thanks for reading!</h3>
+          <div>This small guide is a simple start point for your site. I felt
+            interesting to write it because it
+            helps
+            a newcomer to start messing around with web development and, at the
+            same time, I cited and wrote
+            some
+            concepts that a new dev will read as an appetizer, hopefully giving
+            him the curiosity to search
+            more!
+            That's what I did and nowadays still do with articles.</div>
+          <div>If you have any question, doubt, comment, feel free to write me
+            down below on Disqus, at my
+            mail or to my socials! 😊</div>
+        </section>
+        <section>
+          <div id="disqus_thread"></div>
+        </section>
+      </article>
     </div>
-    <footer id="contact" class="main-footer">
-        <a href="mailto:matteo.gregoricchio@mail.com">
-            <img src="../img/mail-ic2.png" alt="mail" class="icona_social"></a>
-        <a href="https://t.me/MatteoGregoric">
-            <img src="../img/teleg-ic.png" alt="telegram" class="icona_social"></a>
-        <a href="https://github.com/followynne">
-            <img src="../img/icon_github.png" alt="profilegithub" class="icona_social"></a>
-        <a href="https://www.linkedin.com/in/matteo-gregoricchio">
-            <img src="../img/icon_linkedin.png" alt="profilelinkedin" class="icona_social"></a>
-        <a href="https://www.upwork.com/o/profiles/users/_~01ca9d34312f7fa73d/">
-            <img src="../img/icon_instagram.png" alt="profileinstagram" class="icona_social"></a>
-        <a href="https://psnprofiles.com/wigghi92">
-            <img src="../img/icon_ps.png" alt="profileplaystation" class="icona_social"></a>
-        </br></br>
-        <p id="currentYearPrint"><a href="../img/easteregg.jpg" alt="easteregg">Matteo Gregoricchio</a> &copy; 1992-</p>
-    </footer>
-    <script src="../javascript/main.js"></script>
-    <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-        /*
-        */
-        var disqus_config = function () {
-            // Replace PAGE_URL with your page's canonical URL variable
-            this.page.url = 'https://www.matteogregoricchio.com/articles/github-pages-hosting-with-parcel';
-            // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            this.page.identifier = 'github-pages-hosting-with-parcel';
-        };
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://matteo-gregoricchio.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a>
-    </noscript>
-</body>
+
+    <include src="shared-templates/footer.html"></include>
+    <include src="shared-templates/disqus.html" locals='{
+      "pageUrl": "https://www.matteogregoricchio.com/articles/github-pages-hosting-with-parcel",
+      "pageIdentifier": "github-pages-hosting-with-parcel"
+    }'></include>
+  </body>
 
 </html>

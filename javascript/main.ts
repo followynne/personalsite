@@ -1,40 +1,24 @@
-import $ from 'jquery';
-import 'popper.js';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap';
+import { Popover } from 'bootstrap';
 
 const printDate = () => {
-    let date = new Date();
-    $('#currentYearPrint').append(date.getFullYear());
+  const date = new Date().getFullYear();
+  document.getElementById('currentYearPrint').append(date.toString());
 };
 
 (() => {
-  $('.scroll').on('click', (e) => {
-    e.preventDefault();
-    let link = $(e.target).attr('href');
-    if ($(e.target).is('img')) {
-      let node = $(e.target).parentsUntil();
-      node.each((index) => {
-        if ($(node[index]).is('a')) {
-          link = $(node[index]).attr('href');
-        }
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth',
       });
-    }
-    $('html, body').animate(
-      {
-        scrollTop: $(link).offset().top,
-      },
-      1200,
-    );
+    });
   });
 
   printDate();
 
-  $(function () {
-    $('[data-toggle="popover"]').popover();
-  });
-
-  $('#itsCourse').popover({
+  new Popover(document.getElementById('itsCourse'), {
     content:
       '.NET Framework / C#, 106hrs' +
       '</br>PHP PROGRAMMING, 106hr' +
