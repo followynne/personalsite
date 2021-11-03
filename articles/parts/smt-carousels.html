@@ -7,30 +7,34 @@
   ]}
 ]">
   <!-- Slider main container -->
-  <div class="swiper" style="width: 800px;height: 300px;">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <each loop="slides in lit.images">  
-        <div class="swiper-slide">
-          <img
-            src={{slides.path}}
-            data-src={{slides.path}}
-            class="swiper-lazy"
-          />
-          {{slides.caption}}</div>
-        <div class="swiper-slide">{{slides.path}}</div>
-        <div class="swiper-slide">Slide 3</div>
-      </each>
+  <div class="swiper-external-container">
+    <div class="swiper-container">
+      <div class="swiper" style="width: 800px;height: 300px;">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <each loop="slides in lit.images">
+            <div class="swiper-slide">
+              <div class="card-image"><img src={{slides.path}}
+                  data-src={{slides.path}} class="swiper-lazy" /></div>
+              {{slides.caption}}
+            </div>
+            <div class="swiper-slide">{{slides.path}}</div>
+            <div class="swiper-slide">Slide 3</div>
+          </each>
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"><i
+            class="fas fa-chevron-circle-left arrow-icon"></i></div>
+        <div class="swiper-button-next"><i
+            class="fas fa-chevron-circle-right arrow-icon"></i></div>
+
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+      </div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
   </div>
 </each>
