@@ -11,6 +11,18 @@
   padding-bottom: 25px;
 }
 
+.articles-progress-bar {
+  margin-left: 1%;
+  top: 15%;
+  width: 30%;
+  z-index: 10;
+
+  @include main.min-tablet-width() {
+    top: 12%;
+    margin-left: 2%;
+  }
+}
+
 .markdown-body {
   box-sizing: border-box;
   font-size: large;

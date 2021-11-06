@@ -5,13 +5,13 @@ const updateScrollBarPosition = () => {
   const verticalPos = window.scrollY;
   const pageHeight = document.body.scrollHeight;
   const posHeight = window.innerHeight;
-  const scrollPercent = (
-    (verticalPos / (pageHeight - posHeight)) *
-    100
-  ).toFixed(0);
+  const scrollPercent = (verticalPos / (pageHeight - posHeight)) * 100;
+  const scrollPercentFixed = scrollPercent.toFixed(0);
 
-  progressBar.style.setProperty('width', `${scrollPercent}%`);
-  progressBar.ariaValueNow = `${scrollPercent}%`;
+  progressBar.style.setProperty('width', `${scrollPercentFixed}%`);
+  progressBar.ariaValueNow = `${scrollPercentFixed}%`;
+  progressBar.textContent =
+    scrollPercent < 95 ? `${scrollPercentFixed}%` : 'Thanks for reading!';
 };
 
 updateScrollBarPosition();
