@@ -1,47 +1,115 @@
-<each
-  loop="lit in [
-  { title: '1', images: [
-    { 
-      path: '../img/about_img.jpg',
-      caption: '(dashboard with displayed shifts) select projects and period and check your shifts scheduler',
+<ol>
+  <each
+    loop="lit in [
+    {
+      title: 'Check and perform shift assignments',
+      images: [
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(dashboard with displayed shifts) Select projects and time period, then check your shifts schedule',
+        },
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(shift modal - empty) Click a shift and check its complete data: events, shift rule and associated info, candidates, shift informations, the assignment lists',
+        },
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(candidates view) Check candidatures and drag&drop a candidate onto one of your assignment, to fill the data based on that staff member',
+        },
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            ' (shift modal - some assignments) Choose for each assignment the role, the associated events, the location, start and end time...',
+        },
+      ],
     },
-    { 
-      path: '../img/about_img.jpg',
-      caption: '(dashboard with displayed shifts) select projects and period and check your shifts scheduler',
+    {
+      title: 'Check and compare staff workload.',
+      subtitle: 'It will let you easily understand every team member status and improve shift equality',
+      images: [
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(dashboard with 3 memmbers compared)',
+        },
+      ],
     },
-    { 
-      path: '../img/about_img.jpg',
-      caption: '(dashboard with displayed shifts) select projects and period and check your shifts scheduler',
-    }
-  ]},
-]"
->
-  <div class="swiper-external-container">
-    <div class="swiper-container">
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <each loop="slides in lit.images">
-            <div class="swiper-slide">
-              <div class="card-image">
-                <img
-                  src="{{slides.path}}"
-                  data-src="{{slides.path}}"
-                  data-caption="{{slides.caption}}"
-                  class="swiper-lazy"
-                />
-                <div class="swiper-caption">{{slides.caption}}</div>
+    {
+      title: 'Staff view',
+      images: [
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(staff modal) A staff member will read its shift information. He will receive mails that notify him on new shifts or on any update',
+        },
+      ],
+    },
+    {
+      title: 'Importing your data.',
+      subtitle: 'With the automatic import, perform a massive import based on your project endpoints. Note that every day the import will be run in the background, to let you keep your project aligned with its events without any manual intervention! With the manual event creation, you add, insert, delete any extra-events not mapped in available endpoints; if you miss endpoints or you want complete freedom on your events management, you can use it as much as you like to manually manage events!',
+      images: [
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(import options) The automatic import',
+        },
+        {
+          path: '../img/about_img.jpg',
+          caption: `(manual import) Manual import`,
+        },
+      ],
+    },
+    {
+      title: 'Exporting your data',
+      images: [
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(export options): Choose between many exports and remember that many more can be easily implemented by extending the existing api!',
+        },
+        {
+          path: '../img/about_img.jpg',
+          caption:
+            '(export option example) Select the input data to produce custom extractions tailored on your requirements',
+        },
+      ],
+    },
+  ]"
+  >
+    <li>{{lit.title}}</li>
+    <if condition="!!lit.subtitle">
+      <div class="fs-6 w-75 m-auto">{{lit.subtitle}}</div>
+    </if>
+    <div class="swiper-external-container">
+      <div class="swiper-container">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <each loop="slides in lit.images">
+              <div class="swiper-slide">
+                <div class="card-image">
+                  <img
+                    src="{{slides.path}}"
+                    data-src="{{slides.path}}"
+                    data-caption="{{slides.caption}}"
+                    class="swiper-lazy"
+                  />
+                  <div class="swiper-caption">{{slides.caption}}</div>
+                </div>
               </div>
-            </div>
-          </each>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev">
-          <i class="fas fa-chevron-circle-left arrow-icon"></i>
-        </div>
-        <div class="swiper-button-next">
-          <i class="fas fa-chevron-circle-right arrow-icon"></i>
+            </each>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev">
+            <i class="fas fa-chevron-circle-left arrow-icon"></i>
+          </div>
+          <div class="swiper-button-next">
+            <i class="fas fa-chevron-circle-right arrow-icon"></i>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</each>
+  </each>
+</ol>
