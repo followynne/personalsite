@@ -54,6 +54,10 @@
     margin: 1.1rem auto;
     padding-top: 45px;
 
+    .spinner-grow {
+      animation: 2.75s linear infinite spinner-grow;
+    }
+
     &.width-reduce {
       margin: 15px auto;
       width: 80%;

@@ -1,39 +1,46 @@
-<each loop="lit in [
+<each
+  loop="lit in [
   { title: '1', images: [
     { 
       path: '../img/about_img.jpg',
       caption: '(dashboard with displayed shifts) select projects and period and check your shifts scheduler',
+    },
+    { 
+      path: '../img/about_img.jpg',
+      caption: '(dashboard with displayed shifts) select projects and period and check your shifts scheduler',
+    },
+    { 
+      path: '../img/about_img.jpg',
+      caption: '(dashboard with displayed shifts) select projects and period and check your shifts scheduler',
     }
-  ]}
-]">
-  <!-- Slider main container -->
+  ]},
+]"
+>
   <div class="swiper-external-container">
     <div class="swiper-container">
-      <div class="swiper" style="width: 800px;height: 300px;">
-        <!-- Additional required wrapper -->
+      <div class="swiper">
         <div class="swiper-wrapper">
-          <!-- Slides -->
           <each loop="slides in lit.images">
             <div class="swiper-slide">
-              <div class="card-image"><img src={{slides.path}}
-                  data-src={{slides.path}} class="swiper-lazy" /></div>
-              {{slides.caption}}
+              <div class="card-image">
+                <img
+                  src="{{slides.path}}"
+                  data-src="{{slides.path}}"
+                  data-caption="{{slides.caption}}"
+                  class="swiper-lazy"
+                />
+                <div class="swiper-caption">{{slides.caption}}</div>
+              </div>
             </div>
-            <div class="swiper-slide">{{slides.path}}</div>
-            <div class="swiper-slide">Slide 3</div>
           </each>
         </div>
-        <!-- If we need pagination -->
         <div class="swiper-pagination"></div>
-
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"><i
-            class="fas fa-chevron-circle-left arrow-icon"></i></div>
-        <div class="swiper-button-next"><i
-            class="fas fa-chevron-circle-right arrow-icon"></i></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+        <div class="swiper-button-prev">
+          <i class="fas fa-chevron-circle-left arrow-icon"></i>
+        </div>
+        <div class="swiper-button-next">
+          <i class="fas fa-chevron-circle-right arrow-icon"></i>
+        </div>
       </div>
     </div>
   </div>
