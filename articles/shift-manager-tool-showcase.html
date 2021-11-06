@@ -1,196 +1,210 @@
 <!DOCTYPE html>
-<html>
 
+<html>
   <head>
-    <include src="shared-templates/head.html" locals='{
+    <include
+      src="shared-templates/head.html"
+      locals='{
       "pageTitle": "Shift Manager Tool: a showcase"
-    }'></include>
-    <link rel="stylesheet" type="text/css" href="/css/articles.scss">
+    }'
+    ></include>
+    <link rel="stylesheet" type="text/css" href="/css/articles.scss" />
+    <script>
+      // TMP
+      const query = new URLSearchParams(window.location.search);
+      const secretKey = query.get('fptel__rx');
+      if (!secretKey || secretKey !== '32043935') {
+        window.location.replace(`${window.location.origin}/articles`);
+      }
+    </script>
   </head>
 
   <body>
+    <include src="shared-templates/progress-bar.html"></include>
     <include src="shared-templates/header-article.html"></include>
     <div class="banner-tut">
       <article class="markdown-body">
         <h1>Shift Manager Tool: a showcase</h1>
-        <h2>There was a time...</h2>
         <section id="intro">
-          <div>
-            A long time ago, there were lots of events happening in a galaxy far
-            far away. Those events required a working support force, ready to
-            act against whatever issue or need the event would encounter during
-            its svolgimento.
-            There were managers, which had to assign and manage this work force.
-            Their job was to keep track of those events while keeping the work
-            force aligned and split in shifts.
-            If the story were to end here, we wouldn't have a story at all. But
-            those events had the bad idea of changing their dates and times...
-            and so the managers constantly had to check events, to manually
-            search for changes, to manually update their old and rusty
-            Sacred-Excel-Staff-Tables while notifying their staff...
-            Those were hard and dark times, until...
+          <div class="alert alert-info width-reduce">
+            <span class="title text-center">
+              <div class="spinner-grow spinner-grow-sm" role="status"></div>
+              There was a time...</span
+            >
+            <div>
+              <i>A long time ago</i>, lots of events were happening in a galaxy
+              far far away.
+            </div>
+            <div>
+              Those events required an <b>active support force</b>, ready to act
+              against whatever issue or request an event and its clients would
+              encounter during its unrolling.
+            </div>
+            <div>
+              There were managers, which had to assign and manage this work
+              force. Their job was to keep track of those events, while keeping
+              the work force aligned and split in shifts.
+            </div>
+            <div>
+              <b
+                >If the story were to end here, we wouldn't have a story at
+                all.</b
+              >
+            </div>
+            <hr />
+            <div>
+              <b>BUT</b> those events had the bad idea of changing their dates,
+              their times, their details...
+            </div>
+            <div>
+              and the managers had to check constantly them, to manually search
+              for their hidden and crucial changes, to manually update their old
+              and rusty
+              <span class="d-inline-block fw-bold">
+                Tables of the Holy Excel Staff Shifts Law
+              </span>
+              while making sure that all their staff are notified and aligned on
+              the shift updates...
+            </div>
+            <div class="alert alert-success fw-bold p-0">
+              Those were hard and dark times, until...
+            </div>
           </div>
         </section>
         <section>
           <h3>Intro</h3>
-          <div>Between 2018 and 2020, I worked as a web support on live events
-            coverage. We were a team of around 12 people and we only had a
-            manager.
-            This man had to spend a lot of time on our shifts organization. He
-            had to check if any new events were scheduled and required coverage,
-            he had to manually review the events data to search for any updates
-            that required a shift update or a shift delete, he had to keep us
-            updated on our shifts, our timings, he had to retrieve our
-            availability and then to collect from us our answer to his
-            assignations.
-            All of his job was done with the help of an Excel Table, mails
-            and... the events collections. It was strange to see someone in 202X
-            still going full-manual on such time-consuming tasks, like keeping
-            track of hundreds of events with no tool or automation system.
-
-            When I was hired as a dev for the same company I worked as a
-            support, in my first period, one of the first goals I was given was
-            that of creating an internal company tool. When I was collecting
-            ideas for the tool, my old manager @Nicholas came by and splurted
-            out the idea: why don't we create a tool to manage shifts and staff?
+          <div>
+            Between 2018 and 2020, I worked as a web support on live events
+            coverage. We were a team of around <b>12 people</b> and we only had
+            a manager.
+          </div>
+          <div>
+            My boss had to spend a lot of time on our shifts organization. His
+            activities were:
+            <ul>
+              <li>checking if any new events were scheduled</li>
+              <li>checking if those actually required a staff coverage</li>
+              <li>
+                manually reviewing already existing events, to search for any
+                updates that required a shift update or a shift delete
+              </li>
+              <li>keeping staff updated on their shifts and their timings</li>
+              <li>retrieving their availability</li>
+              <li>collecting each staff answer for each assignations</li>
+            </ul>
+          </div>
+          <div>
+            All of his job was done with only the help of an Excel sheet, mails
+            and auto-managed private messagging chats, and... the events
+            json-xml endpoints exposed by each project he managed.
+          </div>
+          <div>
+            It was really strange to see someone in 202X still going full-manual
+            on such
+            <span class="fw-bold fw-italic">time-consuming tasks </span>, like
+            keeping track of hundreds of events with no tool or automation
+            system.
+          </div>
+          <div class="divider"></div>
+          <div>
+            When I became a dev in the same company I was a support, one of the
+            first goals I was given was to create a potential new company tool.
+          </div>
+          <div>
+            When I was collecting ideas for the tool, my old manager
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nicholas-de-pasquale-9a3b11178"
+              >@Nicholas
+            </a>
+            came by and splurted out the idea:
+            <div class="alert alert-success w-75 fw-italic fw-bold">
+              "why don't we create a tool to manage shifts and staff? You know
+              what the staff need, I know what the managers need, mix 'em up and
+              we're good to go!"
+            </div>
           </div>
         </section>
         <section>
           <h3>The mission</h3>
-          <div>We had a clear mission ahead of us: we wanted to create a small
+          <div>
+            We had a clear mission ahead of us: we wanted to create a small
             system that could help a manager manage his workforce while leaving
-            most of the "boilerplate work" to automatic procedures.
-            Boilerplate work was everything that didn't require a managerial
-            choice at its base. Examples? Checking an event endpoint and
-            searchinf for any event update. Creating a shift placeholder from
-            the list of existing events, leaving to the managers only the burden
-            of assigning the staff...
-
-            Me and @Nicholas worked hard for more than a year to create this
-            system.
-            We defined some requirements beforehand:
-            - staff should be assigned to shifts freely by the manager: he would
-            have been able to decide their start date, their end, their role and
-            so on, without any particular constraint set from the tool
-            - events should heavily rely on import automatization; the tool
-            should use endpoints and data provided by the client to create and
-            retrieve events without manual requirements
-            - managers shouldn't need to create a shift because shifts should be
-            created from the tool based on the events received; this would have
-            meant to invert the usual flow! You don't bother anymore on shifts,
-            you only insert/import the events and shifts will be automatically
-            prepared from these.
-            - shifts should group together events with the same start day and
-            the same assignations rule (an info that the manager defines to
-            identitfy the coverage level behind an event)
-            - manager should have easy access to exported data, to get an
-            helpful hand when doing budget plannings and cost review.
-
-            All this combined went to become part of the first alpha version;
-            after that time, many versions went by, many changes and
-            improvements were done until recently, when we reached the first
-            major version.
-            We added many things with time; a small list:
-            - [...]
-            - staff can be assigned to locations
-            - candidatures from staff members to existing events!
+            most of the "boilerplate work" to automatic procedures. Boilerplate
+            work was everything that didn't require a managerial choice at its
+            base. Examples? Checking an event endpoint and searchinf for any
+            event update. Creating a shift placeholder from the list of existing
+            events, leaving to the managers only the burden of assigning the
+            staff... Me and @Nicholas worked hard for more than a year to create
+            this system. We defined some requirements beforehand: - staff should
+            be assigned to shifts freely by the manager: he would have been able
+            to decide their start date, their end, their role and so on, without
+            any particular constraint set from the tool - events should heavily
+            rely on import automatization; the tool should use endpoints and
+            data provided by the client to create and retrieve events without
+            manual requirements - managers shouldn't need to create a shift
+            because shifts should be created from the tool based on the events
+            received; this would have meant to invert the usual flow! You don't
+            bother anymore on shifts, you only insert/import the events and
+            shifts will be automatically prepared from these. - shifts should
+            group together events with the same start day and the same
+            assignations rule (an info that the manager defines to identitfy the
+            coverage level behind an event) - manager should have easy access to
+            exported data, to get an helpful hand when doing budget plannings
+            and cost review. All this combined went to become part of the first
+            alpha version; after that time, many versions went by, many changes
+            and improvements were done until recently, when we reached the first
+            major version. We added many things with time; a small list: - [...]
+            - staff can be assigned to locations - candidatures from staff
+            members to existing events!
           </div>
         </section>
         <section>
           <h3>Let'see some action!</h3>
-          <div>Let me show you some juice on the tool potentialities, it will be
-            way more interesting than other words!
-            <ol>
-              <li>
-                <include src="articles/parts/smt-carousels.html"></include>
-                1. Check and perform some staff assignments
-                img-a: (dashboard with displayed shifts) select projects and
-                period
-                and check your shifts scheduler
-                img-b: (shift modal - empty) click a shift and check its
-                complete
-                data: events, shift rule and associated info, candidates, shift
-                informations, the assignment lists
-                img-c: (candidates view) check "candidature" and drag&drop a
-                candidate onto one of your assignment, to fill the data based on
-                the
-                member
-                img-d: (shift modal - some assignments) choose for each
-                assignment
-                the role, the associated events, the location, start and end
-                time,
-                all day flag to automatically take entire days
-                </lu>
-                2. Check and compare staff workload
-                img-a: (dashboard with 3 memmbers compared) select and compare
-                staff
-                members load to easily understand every team member status and
-                improve shift equality
-                3. Staff view
-                img-a: (staff modal) a staff member will read its shift
-                information,
-                he will receive personal mails to notify him on new shifts or on
-                any
-                change
-                4. Imports
-                img-a: (import options) use the automatic import based on your
-                project endpoints to perform a massive automatic import; every
-                day
-                the import will be run in the background, to let you keep your
-                project aligned on its events without any manual intervention
-                img-b: (manual import) use the manual event creation to add,
-                insert,
-                delete any extra-events not mapped in any available endpoint; if
-                you
-                don't have endpoints or you want complete freedom on your events
-                management, you can use it as much as you like to manually
-                manage
-                events!
-                5. Exports
-                img-a: (export options): choose between the following exports:
-                [...] and remind that many more can be easily implemented by
-                extending the existing api!
-                img-b: (export option example) use the export and select the
-                input
-                data to produce custom extractions tailored on your requirements
-            </ol>
-
-            I won't go on with the examples, otherwise I wouldn't arouse your
-            curiosity enough :)
+          <div>
+            Let me show you some juice on the tool potentialities, it will be
+            way more interesting than other words! Hover onto images to read the
+            captions.
+          </div>
+          <div class="text-center fs-5">
+            <include src="articles/parts/smt-carousels.html"></include>
+          </div>
+          <div class="divider"></div>
+          <div class="alert alert-primary fs-6 width-reduce">
+            PS: I won't go on with the examples, otherwise I wouldn't arouse
+            your curiosity enough :)
           </div>
         </section>
         <section>
           <h3>Tech Stack</h3>
-          <div>- built on top of ASP .NET Core backend, on 3 separate projects -
-            1 for the OAuth2.0 server, 1 hosting the API Server, 1 for the
-            client app
-            - MongoDB is the application database, accessible only through the
-            exposed Api Layer
-            - Api project uses Serilog as logging system, Hangfire to manage
-            background jobs (mainly to implement a reliable mail system,
-            enterprise-safe), ElmahCore to catch and log any unhandled exception
-            - Client application is made with React + Redux (while being hosted
-            on top of the ASP .NET Core MVC project)
-            [package.json list to read]
-            - Infrastructure is hosted on Docker containers, exposed through a
-            Kubernetes cluster
-            - CI/CD Pipelines are hosted on Azure Devops repository
+          <div>
+            - built on top of ASP .NET Core backend, on 3 separate projects - 1
+            for the OAuth2.0 server, 1 hosting the API Server, 1 for the client
+            app - MongoDB is the application database, accessible only through
+            the exposed Api Layer - Api project uses Serilog as logging system,
+            Hangfire to manage background jobs (mainly to implement a reliable
+            mail system, enterprise-safe), ElmahCore to catch and log any
+            unhandled exception - Client application is made with React + Redux
+            (while being hosted on top of the ASP .NET Core MVC project)
+            [package.json list to read] - Infrastructure is hosted on Docker
+            containers, exposed through a Kubernetes cluster - CI/CD Pipelines
+            are hosted on Azure Devops repository
           </div>
         </section>
         <section>
           <h3>Contacts & Greetings</h3>
-          <div>If you made this far, kudos to you!
-            Me and @Nicholas are really happy if you found the shift manager
-            tool interesting and we would love to hear any ideas, doubts,
-            questions that sparkled after reading this showcase. Feel free to
-            write us or in the comment section or with any other contacts you
-            find in the footer.
-            If you're interested in the tool, you'd like to have a casual chat
-            on it, you'd like to discuss any aspect of it... we're always open,
-            just send a message to either @me or @Nicholas and we'll get back to
-            you asap :)
-
-            Thanks again for the interest... bye bye, until the next time!</div>
+          <div>
+            If you made this far, kudos to you! Me and @Nicholas are really
+            happy if you found the shift manager tool interesting and we would
+            love to hear any ideas, doubts, questions that sparkled after
+            reading this showcase. Feel free to write us or in the comment
+            section or with any other contacts you find in the footer. If you're
+            interested in the tool, you'd like to have a casual chat on it,
+            you'd like to discuss any aspect of it... we're always open, just
+            send a message to either @me or @Nicholas and we'll get back to you
+            asap :) Thanks again for the interest... bye bye, until the next
+            time!
+          </div>
         </section>
         <section>
           <div id="disqus_thread"></div>
@@ -205,5 +219,4 @@
       "pageIdentifier": "shift-manager-tool-showcase"
     }'></include> -->
   </body>
-
 </html>
