@@ -2,6 +2,7 @@
   <each
     loop="lit in [
     {
+      id: 'sh-ass',
       title: 'Check and perform shift assignments',
       images: [
         {
@@ -27,6 +28,7 @@
       ],
     },
     {
+      id: 'sh-wl',
       title: 'Check and compare staff workload.',
       subtitle: 'It will let you easily understand every team member status and improve shift equality',
       images: [
@@ -38,6 +40,7 @@
       ],
     },
     {
+      id: 'st-vw',
       title: 'Staff view',
       images: [
         {
@@ -48,6 +51,7 @@
       ],
     },
     {
+      id: 'imp',
       title: 'Importing your data.',
       subtitle: 'With the automatic import, perform a massive import based on your project endpoints. Note that every day the import will be run in the background, to let you keep your project aligned with its events without any manual intervention! With the manual event creation, you add, insert, delete any extra-events not mapped in available endpoints; if you miss endpoints or you want complete freedom on your events management, you can use it as much as you like to manually manage events!',
       images: [
@@ -63,6 +67,7 @@
       ],
     },
     {
+      id: 'exp',
       title: 'Exporting your data',
       images: [
         {
@@ -86,16 +91,17 @@
     <div class="swiper-external-container">
       <div class="swiper-container">
         <div class="swiper">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper gallery gallery-{{lit.id}}">
             <each loop="slides in lit.images">
               <div class="swiper-slide">
                 <div class="card-image">
-                  <img
-                    src="{{slides.path}}"
-                    data-src="{{slides.path}}"
+                  <a
                     data-caption="{{slides.caption}}"
-                    class="swiper-lazy"
-                  />
+                    data-gallery="gallery-demo-{{lit.id}}"
+                    href="{{slides.path}}"
+                  >
+                    <img src="{{slides.path}}" title="{{slides.caption}}"" />
+                  </a>
                   <div class="swiper-caption">{{slides.caption}}</div>
                 </div>
               </div>

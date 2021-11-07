@@ -1,15 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
-// import Swiper and modules styles
 import '@fortawesome/fontawesome-free/css/solid.min.css';
+import SimpleLightbox from 'simplelightbox';
 import Swiper, { EffectCards, Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import '../css/swiper.scss';
 
+const attachLbox = () => {
+  const selectGalleries = document.querySelectorAll('.gallery');
+  selectGalleries.forEach((element) => {
+    const classLists = [...element.classList].join('.');
+    const e = new SimpleLightbox(`.${classLists} .swiper-slide .card-image a`, {
+      uniqueImages: false,
+    });
+  });
+};
+attachLbox();
+
 // configure Swiper to use modules
 Swiper.use([EffectCards, Navigation, Pagination]);
-
 // init Swiper:
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _ = new Swiper('.swiper', {
   // Optional parameters
   breakpoints: {
