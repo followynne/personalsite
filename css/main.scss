@@ -9,6 +9,12 @@
   }
 }
 
+@mixin max-tablet-width() {
+  @media screen and (max-width: 959px) {
+    @content;
+  }
+}
+
 @mixin min-tablet-width() {
   @media screen and (min-width: 768px) {
     @content;

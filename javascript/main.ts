@@ -5,12 +5,15 @@ const printDate = () => {
 
 (async () => {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+    anchor.addEventListener('click', (e) => {
+      if (this && typeof this.getAttribute === 'function') {
+        e.preventDefault();
+        const attribute = this?.getAttribute('href');
 
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth',
-      });
+        document.querySelector(attribute).scrollIntoView({
+          behavior: 'smooth',
+        });
+      }
     });
   });
 
@@ -19,7 +22,8 @@ const printDate = () => {
   const tooltipItem = document.getElementById('itsCourse');
   if (tooltipItem) {
     const { Popover } = await import('bootstrap');
-    new Popover(tooltipItem, {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const popover = new Popover(tooltipItem, {
       content:
         '.NET Framework / C#, 106hrs' +
         '</br>PHP PROGRAMMING, 106hr' +
