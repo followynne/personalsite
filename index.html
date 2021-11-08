@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <include src="shared-templates/head.html" locals='{
+    <include
+      src="shared-templates/head.html"
+      locals='{
       "pageTitle": "Matteo Gregoricchio"
-    }'></include>
-    <link rel="stylesheet" type="text/css" href="css/hp.scss">
+    }'
+    ></include>
+    <link rel="stylesheet" type="text/css" href="css/hp.scss" />
   </head>
 
   <body>
     <include src="shared-templates/header-main.html"></include>
     <div class="banner">
       <div class="banner-content">
-        <p class="cv">Curriculum Vitae:
-          <a href="./documents/CV Matteo Gregoricchio - Foto.pdf"
-            target="blank">
-            <img src="img/it_flag.png" alt="itaflag" class="centerimg"></a>
+        <p class="cv">
+          Curriculum Vitae:
+          <a
+            href="./documents/CV Matteo Gregoricchio - Foto.pdf"
+            target="blank"
+          >
+            <img src="img/it_flag.png" alt="itaflag" class="centerimg"
+          /></a>
           <a href="./documents/CV Matteo - Eng Foto.pdf" target="blank">
-            <img src="img/uk_flag.png" alt="ukflag" class="centerimg"></a>
+            <img src="img/uk_flag.png" alt="ukflag" class="centerimg"
+          /></a>
         </p>
-        <a href="#portfolio" class="scroll"><img class="arrow"
-            src="img/arrow2.png" alt="arrow"></a>
+        <a href="#portfolio" class="scroll"
+          ><img class="arrow" src="img/arrow2.png" alt="arrow"
+        /></a>
       </div>
     </div>
     <include src="main-parts/portfolio.html"></include>
@@ -29,5 +37,4 @@
 
     <include src="shared-templates/footer.html"></include>
   </body>
-
 </html>
