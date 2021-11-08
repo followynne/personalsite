@@ -1,0 +1,23 @@
+<nav
+  id="navbar-toc"
+  class="navbar articles-progress-bar toc position-fixed navbar-light"
+>
+  <ul class="nav nav-pills">
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle bg-info text-light"
+        data-bs-toggle="dropdown"
+        role="button"
+        aria-expanded="false"
+        >Table of contents</a
+      >
+      <ul class="dropdown-menu">
+        <each loop="itm in ntm">
+          <li>
+            <a class="dropdown-item" href="#{{itm.link}}">{{itm.title}}</a>
+          </li>
+        </each>
+      </ul>
+    </li>
+  </ul>
+</nav>

@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Dropdown, ScrollSpy } from 'bootstrap';
 
 const dropdownElementList = [].slice.call(
