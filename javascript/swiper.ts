@@ -2,7 +2,7 @@
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
 import SimpleLightbox from 'simplelightbox';
-import Swiper, { EffectCards, Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import '../css/swiper.scss';
 
@@ -12,15 +12,15 @@ const attachLbox = () => {
     const classLists = [...element.classList].join('.');
     const e = new SimpleLightbox(`.${classLists} .swiper-slide .card-image a`, {
       uniqueImages: false,
+      captionPosition: 'outside',
     });
   });
 };
-attachLbox();
 
 // configure Swiper to use modules
-Swiper.use([EffectCards, Navigation, Pagination]);
+Swiper.use([Navigation, Pagination]);
 // init Swiper:
-const _ = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper', {
   // Optional parameters
   breakpoints: {
     500: {
@@ -32,7 +32,6 @@ const _ = new Swiper('.swiper', {
   },
   centeredSlides: true,
   direction: 'horizontal',
-  effect: 'cards',
   grabCursor: true,
   loop: true,
   pagination: {
@@ -46,3 +45,5 @@ const _ = new Swiper('.swiper', {
   slidesPerView: 1.5,
   spaceBetween: 10,
 });
+
+attachLbox();
