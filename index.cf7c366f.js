@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-144547471-1"></script>
-<script>// modules are defined as an array
+// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -145,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"2kwcM":[function(require,module,exports) {
+})({"4tV6B":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "b3e121e7e537cb5a";
+module.bundle.HMR_BUNDLE_ID = "36b92579cf7c366f";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -463,107 +458,136 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"7ofe3":[function(require,module,exports) {
-/* eslint-disable prefer-rest-params */ window.dataLayer = window.dataLayer || [];
-function gtag() {
-    // eslint-disable-next-line no-undef
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'UA-144547471-1');
-
-},{}]},["2kwcM","7ofe3"], "7ofe3", "parcelRequireb8a1")
-
-</script>
-
-<meta charset="utf-8">
-<title>How-To, articles &amp; guides</title>
-<!-- 16*16px l'icona da logo; serve salvarla poi in formato .ico es favicon -->
-<link rel="shortcut icon" type="image/x-con" href="/favicon.ddcc6060.ico">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="/articles/github-pages-hosting-with-parcel.89aacbbd.css">
-  </head>
-
-  <body>
-    <header class="main-header clearfix">
-  <a href="https://www.matteogregoricchio.com" id="logo">
-    <h1>Matteo Gregoricchio</h1>
-    <h2>Developer</h2>
-  </a>
-  <nav>
-    <ul>
-      <li><a href="https://www.matteogregoricchio.com">Home</a></li>
-      <li><a href="/articles/">Articles</a></li>
-      <li><a href="#contact" class="scroll">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-    <div class="banner-tut markdown-body content">
-      <h3 class="text-center">Articles List</h3>
-      <section>
-        <div>
-          On this page you'll find a list of articles published on this site.
-        </div>
-        <div>
-          If you have any question or correction to make, write me by your
-          preferred channel within those you find down there!
-        </div>
-        <ul>
-          
-            <li>
-              <a href="github-pages-hosting-with-parcel" class="bold">How to host a site using Github Pages and Parcel</a>
-              (last updated: 13-01-2021)
-            </li>
-          
-        </ul>
-      </section>
-      <section>
-        <div id="disqus_thread" class="pin-down"></div>
-      </section>
-    </div>
-
-    <footer id="contact" class="main-footer">
-    <a href="mailto:matteo.gregoricchio@mail.com">
-        <img src="/mail-ic2.653ac74b.png" alt="mail" class="icona_social"></a>
-    <a href="https://t.me/MatteoGregoric">
-        <img src="/teleg-ic.3e733354.png" alt="telegram" class="icona_social"></a>
-    <a href="https://github.com/followynne">
-        <img src="/icon_github.baaca617.png" alt="profilegithub" class="icona_social"></a>
-    <a href="https://www.linkedin.com/in/matteo-gregoricchio">
-        <img src="/icon_linkedin.9144a017.png" alt="profilelinkedin" class="icona_social"></a>
-    <a href="https://www.upwork.com/o/profiles/users/_~01ca9d34312f7fa73d/">
-        <img src="/icon_instagram.66e49700.png" alt="profileinstagram" class="icona_social"></a>
-    <a href="https://psnprofiles.com/wigghi92">
-        <img src="/icon_ps.745c6d90.png" alt="profileplaystation" class="icona_social"></a>
-    <br><br>
-    <p id="currentYearPrint"><a href="/img/easteregg.jpg" alt="easteregg">Matteo Gregoricchio</a> &copy; 1992-</p>
-</footer>
-<script src="/index.cf7c366f.js" defer=""></script>
-    <script>/* eslint-disable no-unused-vars */ /* eslint-disable camelcase */ /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */ /*
-   */ const disqus_config = ()=>{
-    // Replace PAGE_URL with your page's canonical URL variable
-    this.page.url = 'https://www.matteogregoricchio.com/articles/';
-    // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    this.page.identifier = 'articles-list';
+},{}],"yEWNe":[function(require,module,exports) {
+const printDate = ()=>{
+    const date = new Date().getFullYear();
+    document.getElementById('currentYearPrint').append(date.toString());
 };
-(()=>{
-    // DON'T EDIT BELOW THIS LINE
-    const d = document;
-    const s = d.createElement('script');
-    s.src = 'https://matteo-gregoricchio.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+(async ()=>{
+    document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
+        anchor.addEventListener('click', (e)=>{
+            if (this && typeof this.getAttribute === 'function') {
+                e.preventDefault();
+                const attribute = this?.getAttribute('href');
+                document.querySelector(attribute).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    printDate();
+    const tooltipItem = document.getElementById('itsCourse');
+    if (tooltipItem) {
+        const { Popover  } = await require("6d4041c3938673ab");
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const popover = new Popover(tooltipItem, {
+            content: ".NET Framework / C#, 106hrs</br>PHP PROGRAMMING, 106hr</br>Programming Fundamentals, 75hr</br>JAVA Development, 70hr</br>WEB-FRONT-END Development (HTML, CSS, Javascript), 70hr</br>CLOUD SERVICES, 70hr</br>Databases Fundamentals, 60hr</br>Microsoft SQL Server, 68hr</br>Non-relational Databases Fundamentals (on MongoDB), 25hr</br>DATA WAREHOUSING & DATA ANALYTICS Basics, 20hr</br>Mobile & Web Software architecture, 18hr</br>Computer Networks, 20hr</br>Cyber Security, 20hr</br>BACK-END development with Node.Js, 58hr</br>INTERACTION DESIGN, VISUAL DESIGN Basics, 44hr</br>PROJECT MANAGEMENT Basics, 30hr"
+        });
+    }
 })();
 
-</script>
-<noscript>Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
+},{"6d4041c3938673ab":"4Jqfp"}],"4Jqfp":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('4Hi0w') + "bootstrap.esm.6412c066.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('8lJf7')
+);
 
-  </body>
-</html>
+},{"./helpers/browser/js-loader":"285qT","./helpers/bundle-url":"chiK4"}],"285qT":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require('../cacheLoader');
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName('script');
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var script = document.createElement('script');
+        script.async = true;
+        script.type = 'text/javascript';
+        script.charset = 'utf-8';
+        script.src = bundle;
+        script.onerror = function(e) {
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(e);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName('head')[0].appendChild(script);
+    });
+});
+
+},{"../cacheLoader":"7AHIJ"}],"7AHIJ":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {
+};
+var cachedPreloads = {
+};
+var cachedPrefetches = {
+};
+function getCache(type) {
+    switch(type){
+        case 'preload':
+            return cachedPreloads;
+        case 'prefetch':
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"chiK4":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}]},["4tV6B","yEWNe"], "yEWNe", "parcelRequireb8a1")
+
+//# sourceMappingURL=index.cf7c366f.js.map

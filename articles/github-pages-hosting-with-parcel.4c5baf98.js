@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-144547471-1"></script>
-<script>// modules are defined as an array
+// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -145,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"2kwcM":[function(require,module,exports) {
+})({"eeuBV":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "b3e121e7e537cb5a";
+module.bundle.HMR_BUNDLE_ID = "c320e4fd4c5baf98";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -463,107 +458,21 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"7ofe3":[function(require,module,exports) {
-/* eslint-disable prefer-rest-params */ window.dataLayer = window.dataLayer || [];
-function gtag() {
-    // eslint-disable-next-line no-undef
-    dataLayer.push(arguments);
-}
-gtag('js', new Date());
-gtag('config', 'UA-144547471-1');
-
-},{}]},["2kwcM","7ofe3"], "7ofe3", "parcelRequireb8a1")
-
-</script>
-
-<meta charset="utf-8">
-<title>How-To, articles &amp; guides</title>
-<!-- 16*16px l'icona da logo; serve salvarla poi in formato .ico es favicon -->
-<link rel="shortcut icon" type="image/x-con" href="/favicon.ddcc6060.ico">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i&display=swap" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="/articles/github-pages-hosting-with-parcel.89aacbbd.css">
-  </head>
-
-  <body>
-    <header class="main-header clearfix">
-  <a href="https://www.matteogregoricchio.com" id="logo">
-    <h1>Matteo Gregoricchio</h1>
-    <h2>Developer</h2>
-  </a>
-  <nav>
-    <ul>
-      <li><a href="https://www.matteogregoricchio.com">Home</a></li>
-      <li><a href="/articles/">Articles</a></li>
-      <li><a href="#contact" class="scroll">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-    <div class="banner-tut markdown-body content">
-      <h3 class="text-center">Articles List</h3>
-      <section>
-        <div>
-          On this page you'll find a list of articles published on this site.
-        </div>
-        <div>
-          If you have any question or correction to make, write me by your
-          preferred channel within those you find down there!
-        </div>
-        <ul>
-          
-            <li>
-              <a href="github-pages-hosting-with-parcel" class="bold">How to host a site using Github Pages and Parcel</a>
-              (last updated: 13-01-2021)
-            </li>
-          
-        </ul>
-      </section>
-      <section>
-        <div id="disqus_thread" class="pin-down"></div>
-      </section>
-    </div>
-
-    <footer id="contact" class="main-footer">
-    <a href="mailto:matteo.gregoricchio@mail.com">
-        <img src="/mail-ic2.653ac74b.png" alt="mail" class="icona_social"></a>
-    <a href="https://t.me/MatteoGregoric">
-        <img src="/teleg-ic.3e733354.png" alt="telegram" class="icona_social"></a>
-    <a href="https://github.com/followynne">
-        <img src="/icon_github.baaca617.png" alt="profilegithub" class="icona_social"></a>
-    <a href="https://www.linkedin.com/in/matteo-gregoricchio">
-        <img src="/icon_linkedin.9144a017.png" alt="profilelinkedin" class="icona_social"></a>
-    <a href="https://www.upwork.com/o/profiles/users/_~01ca9d34312f7fa73d/">
-        <img src="/icon_instagram.66e49700.png" alt="profileinstagram" class="icona_social"></a>
-    <a href="https://psnprofiles.com/wigghi92">
-        <img src="/icon_ps.745c6d90.png" alt="profileplaystation" class="icona_social"></a>
-    <br><br>
-    <p id="currentYearPrint"><a href="/img/easteregg.jpg" alt="easteregg">Matteo Gregoricchio</a> &copy; 1992-</p>
-</footer>
-<script src="/index.cf7c366f.js" defer=""></script>
-    <script>/* eslint-disable no-unused-vars */ /* eslint-disable camelcase */ /**
-   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */ /*
-   */ const disqus_config = ()=>{
-    // Replace PAGE_URL with your page's canonical URL variable
-    this.page.url = 'https://www.matteogregoricchio.com/articles/';
-    // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    this.page.identifier = 'articles-list';
+},{}],"4aIEF":[function(require,module,exports) {
+const updateScrollBarPosition = ()=>{
+    const progressBar = document.querySelector('.articles-progress-bar .progress-bar');
+    const verticalPos = window.scrollY;
+    const pageHeight = document.body.scrollHeight;
+    const posHeight = window.innerHeight;
+    const scrollPercent = verticalPos / (pageHeight - posHeight) * 100;
+    const scrollPercentFixed = scrollPercent.toFixed(0);
+    progressBar.style.setProperty('width', `${scrollPercentFixed}%`);
+    progressBar.ariaValueNow = `${scrollPercentFixed}%`;
+    progressBar.textContent = scrollPercent < 95 ? `${scrollPercentFixed}%` : 'Thanks for reading!';
 };
-(()=>{
-    // DON'T EDIT BELOW THIS LINE
-    const d = document;
-    const s = d.createElement('script');
-    s.src = 'https://matteo-gregoricchio.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-})();
+updateScrollBarPosition();
+window.addEventListener('scroll', updateScrollBarPosition);
 
-</script>
-<noscript>Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-</noscript>
+},{}]},["eeuBV","4aIEF"], "4aIEF", "parcelRequireb8a1")
 
-  </body>
-</html>
+//# sourceMappingURL=github-pages-hosting-with-parcel.4c5baf98.js.map
