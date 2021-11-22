@@ -11,6 +11,27 @@
   padding-bottom: 25px;
 }
 
+.articles-progress-bar {
+  margin-left: 1%;
+  top: 15%;
+  width: 30%;
+  z-index: 10;
+
+  @include main.min-tablet-width() {
+    top: 12%;
+    margin-left: 2%;
+  }
+
+  &.toc {
+    top: 18%;
+    width: 20%;
+    @include main.min-tablet-width() {
+      top: 14%;
+      margin-left: 2%;
+    }
+  }
+}
+
 .markdown-body {
   box-sizing: border-box;
   font-size: large;
@@ -53,6 +74,10 @@
   .alert {
     margin: 1.1rem auto;
     padding-top: 45px;
+
+    .spinner-grow {
+      animation: 2.75s linear infinite spinner-grow;
+    }
 
     &.width-reduce {
       margin: 15px auto;

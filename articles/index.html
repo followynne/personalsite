@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <include src="shared-templates/head.html" locals='{
+    <include
+      src="shared-templates/head.html"
+      locals='{
       "pageTitle": "How-To, articles & guides"
-    }'></include>
-    <link rel="stylesheet" type="text/css" href="/css/articles.scss">
+    }'
+    ></include>
+    <link rel="stylesheet" type="text/css" href="/css/articles.scss" />
   </head>
 
   <body>
@@ -13,18 +15,21 @@
     <div class="banner-tut markdown-body content">
       <h3 class="text-center">Articles List</h3>
       <section>
-        <div>On this page you'll find a list of articles published on this site.
+        <div>
+          On this page you'll find a list of articles published on this site.
         </div>
-        <div>If you have any question or correction to make, write me by your
-          preferred channel within
-          those you find down there!
+        <div>
+          If you have any question or correction to make, write me by your
+          preferred channel within those you find down there!
         </div>
         <ul>
-          <each loop="article in [
+          <each
+            loop="article in [
             { url: 'github-pages-hosting-with-parcel', lastUpd: '13-01-2021',
               text: 'How to host a site using Github Pages and Parcel',
             },
-          ]">
+          ]"
+          >
             <li>
               <a href="{{article.url}}" class="bold">{{article.text}}</a>
               (last updated: {{article.lastUpd}})
@@ -38,11 +43,12 @@
     </div>
 
     <include src="shared-templates/footer.html"></include>
-    <include src="shared-templates/disqus.html" locals='{
+    <include
+      src="shared-templates/disqus.html"
+      locals='{
       "pageUrl": "https://www.matteogregoricchio.com/articles/",
       "pageIdentifier": "articles-list"
-    }'></include>
-
+    }'
+    ></include>
   </body>
-
 </html>

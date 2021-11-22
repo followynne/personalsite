@@ -1,8 +1,16 @@
 @use './normalize.css';
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/cerulean/variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootswatch/dist/cerulean/bootswatch';
 
 @mixin max-mobile-width() {
   @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin max-tablet-width() {
+  @media screen and (max-width: 959px) {
     @content;
   }
 }
@@ -55,6 +63,49 @@ body {
   clear: both;
 }
 
+.divider {
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  position: relative;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+
+  &:before {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    content: '';
+    height: 20px;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 20px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+
+  &:after {
+    background: #556270;
+    border: 1px solid #556270;
+    content: '';
+    height: 10px;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    transform: rotate(45deg);
+    width: 10px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+  }
+}
 /**************************
         HEADER
 ***************************/

@@ -1,0 +1,45 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  },
+  "eslint.packageManager": "npm",
+  "files.exclude": {
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/bin": true,
+    "**/obj": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.cache": true,
+    "**/coverage": true,
+    "**/CompiledAssets": true,
+    "**/bin": true,
+    "**/obj": true
+  },
+  "scss.lint.zeroUnits": "warning",
+  "scss.lint.duplicateProperties": "warning",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true
+}

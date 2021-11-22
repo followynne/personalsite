@@ -4,12 +4,6 @@ dist
 .parcel-cache
 .tmp.drivedownload/
 
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
 node_modules/
 .DS_Store
 package-lock.json
@@ -18,7 +12,6 @@ coverage
 .cache
 dist
 lib
-.vscode/
 .idea/
 *.min.js
 # Logs

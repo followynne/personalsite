@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <include
+      src="shared-templates/head.html"
+      locals='{
+      "pageTitle": "Shift Manager Tool: a showcase"
+    }'
+    ></include>
+    <link rel="stylesheet" type="text/css" href="/css/articles.scss" />
+    <script>
+      // TMP
+      const query = new URLSearchParams(window.location.search);
+      const secretKey = query.get('fptel__rx');
+      if (!secretKey || secretKey !== '32043935') {
+        window.location.replace(`${window.location.origin}/articles`);
+      }
+    </script>
+  </head>
+
+  <body data-bs-spy="scroll" data-bs-target="#navbar-toc" data-bs-offset="0">
+    <include src="shared-templates/header-article.html"></include>
+    <div class="banner-tut">
+      <article class="markdown-body fs-5">
+        <h1>Shift Manager Tool: a showcase</h1>
+        <section>
+          <div class="alert alert-info width-reduce">
+            <span class="title text-center">
+              <div
+                id="prequel"
+                class="spinner-grow spinner-grow-sm"
+                role="status"
+              ></div>
+              There was a time...</span
+            >
+            <div>
+              <i>A long time ago</i>, lots of events were happening in a galaxy
+              far far away.
+            </div>
+            <div>
+              Those events required an <b>active support force</b>, ready to act
+              against whatever issue or request an event and its clients would
+              encounter during its unrolling.
+            </div>
+            <div>
+              There were managers, which had to assign and manage this work
+              force. Their job was to keep track of those events, while keeping
+              the work force aligned and split in shifts.
+            </div>
+            <div>
+              <b
+                >If the story were to end here, we wouldn't have a story at
+                all.</b
+              >
+            </div>
+            <hr />
+            <div>
+              <b>BUT</b> those events had the bad idea of changing their dates,
+              their times, their details...
+            </div>
+            <div>
+              and the managers had to check constantly them, to manually search
+              for their hidden and crucial changes, to manually update their old
+              and rusty
+              <span class="d-inline-block fw-bold">
+                Tables of the Holy Excel Staff Shifts Law
+              </span>
+              while making sure that all their staff are notified and aligned on
+              the shift updates...
+            </div>
+            <div class="alert alert-success fw-bold p-0">
+              Those were hard and dark times, until...
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3 id="intro">Intro</h3>
+          <div>
+            Between 2018 and 2020, I worked as a web support on live events
+            coverage. We were a team of around <b>12 people</b> and we only had
+            a manager.
+          </div>
+          <div>
+            My boss had to spend a lot of time on our shifts organization. His
+            activities were:
+            <ul>
+              <li>checking if any new events were scheduled</li>
+              <li>checking if those actually required a staff coverage</li>
+              <li>
+                manually reviewing already existing events, to search for any
+                updates that required a shift update or a shift delete
+              </li>
+              <li>keeping staff updated on their shifts and their timings</li>
+              <li>retrieving their availability</li>
+              <li>collecting each staff answer for each assignations</li>
+            </ul>
+          </div>
+          <div>
+            All of his job was done with only the help of an Excel sheet, mails
+            and auto-managed private messagging chats, and... the events
+            json-xml endpoints exposed by each project he managed.
+          </div>
+          <div>
+            It was really strange to see someone in 202X still going full-manual
+            on such
+            <span class="fw-bold fw-italic">time-consuming tasks </span>, like
+            keeping track of hundreds of events with no tool or automation
+            system.
+          </div>
+          <div class="divider"></div>
+          <div>
+            When I became a dev in the same company I was a support, one of the
+            first goals I was given was to create a potential new company tool.
+          </div>
+          <div>
+            When I was collecting ideas for the tool, my old manager
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nicholas-de-pasquale-9a3b11178"
+              >@Nicholas
+            </a>
+            came by and splurted out the idea:
+            <div class="alert alert-success p-1 w-75 fw-italic fw-bold">
+              "why don't we create a tool to manage shifts and staff? You know
+              what the staff need, I know what the managers need, mix 'em up and
+              we're good to go!"
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3 id="mission">The mission</h3>
+          <div>
+            We had a clear mission ahead of us:
+            <span class="alert alert-primary fw-bold p-1">
+              we wanted to create a small system that could help a manager
+              manage his workforce while leaving most of the "boilerplate work"
+              to automatic procedures.
+            </span>
+          </div>
+          <div>
+            <i>Boilerplate work</i> is everything that doesn't require a
+            managerial choice at its base.
+          </div>
+          <div>
+            Examples? Checking an event endpoint and searching for any event
+            update. Creating a shift entity from the list of existing event. We
+            wanted to leverage these annoyances to leave to the managers only
+            the burden of assigning the staff...
+          </div>
+          <div class="divider"></div>
+          <div>
+            Me and
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nicholas-de-pasquale-9a3b11178"
+              >@Nicholas
+            </a>
+            worked hard for more than a year to create this system. We defined
+            some requirements beforehand:
+            <ul>
+              <li>
+                staff should be assigned to shifts freely by the manager: he
+                would have been able to decide their start date, their end,
+                their role and so on, without any particular constraint set from
+                the tool;
+              </li>
+              <li>
+                events should heavily rely on import automatization; the tool
+                should use endpoints and data provided by the client to create
+                and retrieve events without manual requirements;
+              </li>
+              <li>
+                managers shouldn't need to create a shift because shifts should
+                be created from the tool based on the events received; this
+                would have meant to invert the usual flow! You don't bother
+                anymore on shifts, you only insert/import the events and shifts
+                will be automatically prepared from these.
+              </li>
+              <li>
+                shifts should group together events with the same start day and
+                the same assignations rule (an info that the manager defines to
+                identitfy the coverage level behind an event);
+              </li>
+              <li>
+                manager should have easy access to exported data, to get an
+                helpful hand when doing budget plannings and cost review.
+              </li>
+            </ul>
+            <div class="divider"></div>
+          </div>
+          <div>
+            All this combined went to become part of the first beta version;
+            after that time, many other went by, many changes and improvements
+            were done until recently, when we reached the
+            <b>first major release</b>.
+          </div>
+          <div>
+            In these months we never stopped visualizing new chances to improve
+            the requirements. As of today, we added loads more - let me give
+            some examples:
+            <ul>
+              <li>
+                the chance to assign a member to a selection of events from its
+                shift
+              </li>
+              <li>the location where the staff member will work</li>
+              <li>
+                the freedom for the staff member to insert the actual shift
+                timings he performed
+              </li>
+              <li>
+                easy events manipulation UI, to give complete freedom to the
+                manager to use automatization or support exceptional needs
+              </li>
+              <li>
+                different dashboards for data visualization (shift view, staff
+                comparison, excel-style view...)
+              </li>
+              <li>
+                calendar export service, for an easier integration with an
+                external calendar
+              </li>
+            </ul>
+            The job never stops and many other will come in the near future.
+            Spoiler: right now, we're working on the main v2 feature: automatic
+            import setup that can be dynamically created from the UI. It will be
+            difficult to develop but it will be big when dropped; it will be
+            quite a powerful improvement!
+          </div>
+        </section>
+        <section>
+          <h3 id="showcase">Let'see some action!</h3>
+          <div>
+            Let me show you some juice on the tool potentialities, it will be
+            way more interesting than other words!
+            <small class="d-block">
+              (Hover or click onto the images to read the captions)
+            </small>
+          </div>
+          <div class="text-center fs-5">
+            <include src="articles/parts/smt-carousels.html"></include>
+          </div>
+          <div class="divider"></div>
+          <small class="alert alert-secondary fs-6 p-0 width-reduce">
+            PS: I won't go on with the examples, otherwise I wouldn't arouse
+            your curiosity enough :)
+          </small>
+        </section>
+        <section>
+          <h3 id="techstack">Tech Stack</h3>
+          <ol>
+            <li>
+              built on top of
+              <span class="badge bg-info">ASP .NET Core</span> backend, over 3
+              separate projects:
+              <ul>
+                <li>
+                  an
+                  <span class="badge bg-light">OAuth2.0 IdentityServer4</span>
+                  server, to manage authorization & authentication
+                </li>
+                <li>the api layer</li>
+                <li>the client UI for end-user interaction</li>
+              </ul>
+            </li>
+            <li>
+              <span class="badge bg-success">mongoDB</span> is the application
+              database, accessible only through the exposed api layer. It's
+              hosted as a replica set db, to enable transactions activity and
+              preserve data integrity;
+            </li>
+            <div class="divider"></div>
+            <li>
+              api project hosts all the admitted data interactions. It's
+              developed to implement CQRS pattern; every endpoint is protected
+              by a role-based authorization, to have a granular endpoints
+              protection. It uses
+              <ul>
+                <li>
+                  <span class="badge bg-dark">Serilog</span> as the logging
+                  system
+                </li>
+                <li>
+                  <span class="badge bg-dark">Hangfire</span> to manage
+                  background jobs (mainly it helps to implement a reliable mail
+                  system, enterprise-safe)
+                </li>
+                <li>
+                  <span class="badge bg-dark">ElmahCore</span> to catch and log
+                  any unhandled exception
+                </li>
+              </ul>
+              <span class="badge bg-success">Swagger</span> pages work as the
+              endpoints documentation, open to interested clients and tool
+              end-users.
+              <div>
+                Tests are written with
+                <span class="badge bg-secondary">xUnit</span> and the awesome
+                <span class="badge bg-secondary">FluentAssertion.</span>
+                Integration tests use
+                <span class="badge bg-success">Mongo2Go</span>, a great project
+                to create ephimeral & separate mongod instances on the run for
+                each test.
+              </div>
+            </li>
+            <div class="divider"></div>
+            <li>
+              client application is written entirely in
+              <span class="badge bg-info">Typescript</span>. The front-end is
+              made with <span class="badge bg-primary">React</span> +
+              <span class="badge bg-primary">Redux</span> (while being hosted on
+              top of the ASP .NET Core MVC project).
+              <div>
+                <span class="badge bg-dark">Webpack with Babel</span> are the
+                bundler choice.
+              </div>
+              <div>
+                Tests are written with
+                <span class="badge bg-dark">Jest</span> and wonderful
+                <span class="badge bg-dark">Testing Library</span>
+              </div>
+            </li>
+            <div class="divider"></div>
+            <li>
+              documentation is hosted as part of the front-end, as a separate
+              React application. It explains the tool, its functionalities, tips
+              and tricks. It contains a separate dev section on how to build,
+              contribute, develop and mantain the project.
+            </li>
+            <li>
+              tool runs on
+              <span class="badge bg-primary">Docker</span> containers, exposed
+              through a <span class="badge bg-info">Kubernetes</span>
+              cluster
+            </li>
+            <li>CI/CD pipelines are hosted on Azure Devops repository</li>
+            <li>
+              Versioning increases are automatic upon pull-request merge to
+              master; those are based on the merged branch name, following
+              semantic versioning structure (hotfix, feature, etc...)
+            </li>
+          </ol>
+        </section>
+        <section>
+          <h3 id="byebye">Contacts & Greetings</h3>
+          <div class="fw-bold">If you made this far, kudos to you!</div>
+          <div>
+            Me and
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/nicholas-de-pasquale-9a3b11178"
+              >@Nicholas
+            </a>
+            are really happy if you found the shift manager tool interesting!
+          </div>
+          <div>
+            We'd love to hear any ideas, doubts, questions that sparkled after
+            reading this showcase. Feel free to write us or in the comment
+            section or with any other contacts you find in the footer.
+          </div>
+          <div>
+            If you're interested in the tool, you'd like to have a casual chat
+            on it, you'd like to discuss any aspect of it... we're always open,
+            just send a message to one of us and we'll get back to you asap :)
+          </div>
+          <div class="divider"></div>
+          <div>
+            Thanks again for the interest... bye bye, until the next time!
+          </div>
+        </section>
+        <section>
+          <div id="disqus_thread"></div>
+        </section>
+      </article>
+    </div>
+
+    <include src="shared-templates/footer.html"></include>
+    <include src="shared-templates/progress-bar.html"></include>
+    <include
+      src="articles/parts/toc-btn.html"
+      locals='{
+      "ntm": [
+        { "link": "prequel", "title": "A long time ago..."},
+        { "link": "intro", "title": "Intro"},
+        { "link": "mission", "title": "Mission"},
+        { "link": "showcase", "title": "Showcase"},
+        { "link": "techstack", "title": "Tech Stack"},
+        { "link": "byebye", "title": "Greetings"}
+      ]}'
+    ></include>
+    <script type="module" src="/javascript/swiper.ts"></script>
+    <script type="module" src="/javascript/toc.ts"></script>
+    <include
+      src="shared-templates/disqus.html"
+      locals='{
+      "pageUrl": "https://www.matteogregoricchio.com/articles/shift-manager-tool-showcase",
+      "pageIdentifier": "shift-manager-tool-showcase"
+    }'
+    ></include>
+  </body>
+</html>
