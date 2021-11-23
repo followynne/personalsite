@@ -9,12 +9,12 @@
   min-height: 100vh;
   position: relative;
 
-  /** 66B4EF **/
   background: linear-gradient(
-      rgba(23, 200, 253, 0.281),
-      rgba(7, 127, 219, 0.301)
+      rgba(182, 225, 238, 0.281),
+      rgba(157, 191, 218, 0.658)
     ),
-    url('../img/ban.png') no-repeat fixed center / cover;
+    url('../img/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat fixed center /
+      cover;
 
   & &-content {
     position: absolute;
@@ -23,6 +23,13 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
+
+    h1,
+    h5,
+    h6,
+    p {
+      color: black;
+    }
   }
 
   .cv {
@@ -38,7 +45,22 @@
     height: 45px;
   }
 }
-
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+  &.img-attrib {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 0.5em 0.5em 0;
+    padding: 0.25em;
+    font-size: 0.8em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
 /**************************
           SECTIONS
 ***************************/
@@ -62,74 +84,40 @@ img {
 }
 
 #portfolio {
-  background-image: url('../img/backgroundjob.png');
+  background: linear-gradient(
+      rgba(182, 225, 238, 0.281),
+      rgba(157, 191, 218, 0.658)
+    ),
+    url('../img/fabrizio-conti-7lePZXJXYBM.jpg') no-repeat fixed center / cover;
   position: relative;
 }
 
 #gallery {
-  list-style: none;
   margin: 0 auto;
   padding: 0;
 
-  img {
-    max-width: 100%;
-    height: 60%;
-
-    @include main.min-tablet-width() {
-      max-width: 100%;
-      height: unset;
-    }
-
-    @include main.min-desktop-width() {
-      max-width: 70%;
-    }
-  }
-
-  p a {
-    color: inherit;
-  }
-
-  li {
-    float: left;
-    width: 95%;
-    height: 200px;
+  div.card {
+    height: 290px;
     overflow: auto;
-    margin: 2.5%;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
     position: relative;
     text-align: center;
-
-    /**************************
-    PORTFOLIO (%adattamento)
-    5*3=15
-    100-15=85
-    85:3=28.33333
-    ***************************/
-    @include main.min-tablet-width() {
-      width: 28.33333%;
-      height: 300px;
-    }
 
     &::-webkit-scrollbar {
       display: none;
     }
 
     p {
-      font-size: 0.83em;
+      font-size: 0.87em;
       color: #000000;
-      font-weight: bold;
-      padding: 0.3em;
+      font-weight: 600;
+      padding: 0.2em;
       margin: 0;
     }
     a {
       text-decoration: none;
-    }
-
-    &.hidden-portfolio-li {
-      @include main.max-mobile-width() {
-        display: none;
-      }
     }
   }
 }
@@ -183,7 +171,7 @@ ABOUT
 PERSONAL INFO & CAROUSEL
 ***************************/
 #extra-info {
-  background-color: rgba(181, 201, 240, 0.151);
+  background-color: rgba(132, 170, 245, 0.445);
   width: 100%;
 
   #info {
