@@ -467,9 +467,9 @@ const printDate = ()=>{
 (()=>{
     document.querySelectorAll('a[href^="#"]').forEach((anchor)=>{
         anchor.addEventListener('click', (e)=>{
-            if (undefined && typeof undefined?.getAttribute === 'function') {
+            if (anchor && typeof anchor?.getAttribute === 'function') {
                 e.preventDefault();
-                const attribute = undefined?.getAttribute('href');
+                const attribute = anchor?.getAttribute('href');
                 document.querySelector(attribute).scrollIntoView({
                     behavior: 'smooth'
                 });
