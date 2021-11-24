@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
-import SimpleLightbox from 'simplelightbox';
-import Swiper, { Navigation, Pagination } from 'swiper';
+import SimpleLightBox from 'simplelightbox';
+import * as swipy from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import '../css/swiper.scss';
 
@@ -10,7 +10,7 @@ const attachLbox = () => {
   const selectGalleries = document.querySelectorAll('.gallery');
   selectGalleries.forEach((element) => {
     const classLists = [...element.classList].join('.');
-    const e = new SimpleLightbox(`.${classLists} .swiper-slide .card-image a`, {
+    const e = new SimpleLightBox(`.${classLists} .swiper-slide .card-image a`, {
       uniqueImages: false,
       captionPosition: 'outside',
     });
@@ -18,9 +18,9 @@ const attachLbox = () => {
 };
 
 // configure Swiper to use modules
-Swiper.use([Navigation, Pagination]);
+swipy.Swiper.use([swipy.Navigation, swipy.Pagination]);
 // init Swiper:
-const swiper = new Swiper('.swiper', {
+const swiper = new swipy.Swiper('.swiper', {
   // Optional parameters
   breakpoints: {
     500: {
