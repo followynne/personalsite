@@ -12,7 +12,7 @@
       rgba(182, 225, 238, 0.281),
       rgba(157, 191, 218, 0.658)
     ),
-    url('../img/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat scroll center /
+    url('../img/bg/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat scroll center /
       cover;
 
   @include main.min-desktop-width() {
@@ -20,7 +20,7 @@
         rgba(182, 225, 238, 0.281),
         rgba(157, 191, 218, 0.658)
       ),
-      url('../img/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat fixed center /
+      url('../img/bg/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat fixed center /
         cover;
   }
 
@@ -96,7 +96,8 @@ img {
       rgba(182, 225, 238, 0.281),
       rgba(157, 191, 218, 0.658)
     ),
-    url('../img/fabrizio-conti-7lePZXJXYBM.jpg') no-repeat fixed center / cover;
+    url('../img/bg/fabrizio-conti-7lePZXJXYBM.jpg') no-repeat fixed center /
+      cover;
   position: relative;
 }
 
@@ -136,7 +137,7 @@ ABOUT
 #about {
   &.cont {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
-      url('../img/about_img.jpg') no-repeat fixed center / cover;
+      url('../img/bg/about_img.jpg') no-repeat fixed center / cover;
     padding: 30px 0 40px 0;
   }
 
