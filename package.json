@@ -49,6 +49,6 @@
     "bootstrap": "^5.1.3",
     "bootswatch": "^5.1.3",
     "simplelightbox": "^2.10.1",
-    "swiper": "^7.3.0"
+    "swiper": "^7.3.1"
   }
 }
