@@ -465,7 +465,6 @@ var _solidMinCss = require("@fortawesome/fontawesome-free/css/solid.min.css");
 var _simplelightbox = require("simplelightbox");
 var _simplelightboxDefault = parcelHelpers.interopDefault(_simplelightbox);
 var _swiper = require("swiper");
-var _swiperDefault = parcelHelpers.interopDefault(_swiper);
 var _swiperBundleMinCss = require("swiper/swiper-bundle.min.css");
 var _swiperScss = require("../css/swiper.scss");
 const attachLbox = ()=>{
@@ -481,12 +480,12 @@ const attachLbox = ()=>{
     });
 };
 // configure Swiper to use modules
-_swiperDefault.default.use([
+_swiper.Swiper.use([
     _swiper.Navigation,
     _swiper.Pagination
 ]);
 // init Swiper:
-const swiper = new _swiperDefault.default('.swiper', {
+const swiper = new _swiper.Swiper('.swiper', {
     // Optional parameters
     breakpoints: {
         500: {
