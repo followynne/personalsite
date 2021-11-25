@@ -21,10 +21,12 @@ const printDate = () => {
 
   printDate();
 
-  const tooltipItem = document.getElementById('itsCourse');
-  if (tooltipItem) {
+  const popoverItem = document.getElementById('itsCourse');
+  if (popoverItem) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const popover = new bts.Popover(tooltipItem, {
+    const popover = new bts.Popover(popoverItem, {
+      placement: 'auto',
+      trigger: 'hover',
       content:
         '.NET Framework / C#, 106hrs' +
         '</br>PHP PROGRAMMING, 106hr' +
@@ -43,5 +45,14 @@ const printDate = () => {
         '</br>INTERACTION DESIGN, VISUAL DESIGN Basics, 44hr' +
         '</br>PROJECT MANAGEMENT Basics, 30hr',
     });
+  }
+  const tooltipItem = document.querySelector('.cv.social a.uk-cool');
+  if (tooltipItem) {
+    const tooltip = new bts.Tooltip(tooltipItem, {
+      placement: 'left',
+      offset: '10',
+      title: 'the cool one!',
+    });
+    tooltip.show();
   }
 })();
