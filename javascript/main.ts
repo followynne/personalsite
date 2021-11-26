@@ -1,14 +1,16 @@
+import * as bts from 'bootstrap';
+
 const printDate = () => {
   const date = new Date().getFullYear();
   document.getElementById('currentYearPrint').append(date.toString());
 };
 
-(async () => {
+(() => {
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
-      if (this && typeof this.getAttribute === 'function') {
+      if (anchor && typeof anchor?.getAttribute === 'function') {
         e.preventDefault();
-        const attribute = this?.getAttribute('href');
+        const attribute = anchor?.getAttribute('href');
 
         document.querySelector(attribute).scrollIntoView({
           behavior: 'smooth',
@@ -19,11 +21,12 @@ const printDate = () => {
 
   printDate();
 
-  const tooltipItem = document.getElementById('itsCourse');
-  if (tooltipItem) {
-    const { Popover } = await import('bootstrap');
+  const popoverItem = document.getElementById('itsCourse');
+  if (popoverItem) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const popover = new Popover(tooltipItem, {
+    const popover = new bts.Popover(popoverItem, {
+      placement: 'auto',
+      trigger: 'hover',
       content:
         '.NET Framework / C#, 106hrs' +
         '</br>PHP PROGRAMMING, 106hr' +
@@ -42,5 +45,21 @@ const printDate = () => {
         '</br>INTERACTION DESIGN, VISUAL DESIGN Basics, 44hr' +
         '</br>PROJECT MANAGEMENT Basics, 30hr',
     });
+  }
+  const tooltipItem = document.querySelector('.cv.social .cool-ones');
+  const tooltipItem2 = document.querySelector('.cv.social .boring-ones');
+  if (tooltipItem) {
+    const tooltip = new bts.Tooltip(tooltipItem, {
+      placement: 'left',
+      title: 'the cool ones!',
+    });
+    tooltip.show();
+  }
+  if (tooltipItem2) {
+    const tooltip2 = new bts.Tooltip(tooltipItem2, {
+      placement: 'right',
+      title: 'the boring ones!',
+    });
+    tooltip2.show();
   }
 })();
