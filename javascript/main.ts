@@ -46,13 +46,20 @@ const printDate = () => {
         '</br>PROJECT MANAGEMENT Basics, 30hr',
     });
   }
-  const tooltipItem = document.querySelector('.cv.social a.uk-cool');
+  const tooltipItem = document.querySelector('.cv.social .cool-ones');
+  const tooltipItem2 = document.querySelector('.cv.social .boring-ones');
   if (tooltipItem) {
     const tooltip = new bts.Tooltip(tooltipItem, {
       placement: 'left',
-      offset: '10',
-      title: 'the cool one!',
+      title: 'the cool ones!',
     });
     tooltip.show();
+  }
+  if (tooltipItem2) {
+    const tooltip2 = new bts.Tooltip(tooltipItem2, {
+      placement: 'right',
+      title: 'the boring ones!',
+    });
+    tooltip2.show();
   }
 })();
