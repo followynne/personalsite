@@ -51,14 +51,18 @@ const printDate = () => {
   if (tooltipItem) {
     const tooltip = new bts.Tooltip(tooltipItem, {
       placement: 'left',
-      title: 'the cool ones!',
+      title:
+        '<small>the cool ones!<div><a href="https://rxresu.me/" target="_blank">Made with RxResume</div></a></small>',
+      html: true,
+      customClass: 'text-justify',
     });
     tooltip.show();
   }
   if (tooltipItem2) {
     const tooltip2 = new bts.Tooltip(tooltipItem2, {
       placement: 'right',
-      title: 'the boring ones!',
+      title: '<small>the boring ones!</small>',
+      html: true,
     });
     tooltip2.show();
   }

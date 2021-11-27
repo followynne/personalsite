@@ -177,13 +177,12 @@ header {
       margin-right: 3%;
       background: none;
       text-align: right;
-      padding-top: 15px;
       opacity: 1;
 
       a {
         padding: 0 5px;
         font-weight: bold;
-        font-size: 1.1em;
+        font-size: 0.95em;
         text-decoration: none;
       }
     }
@@ -201,7 +200,7 @@ header {
   &.main-header {
     background-color: rgba(2, 40, 115, 0.7);
     margin: 0 0 0 0;
-    padding: 5px 0 0 0;
+    padding: 10px 0 0 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -215,10 +214,6 @@ header {
       h1 {
         font-size: 1.4em;
         padding-bottom: 0.3em;
-      }
-
-      h2 {
-        display: none;
       }
     }
   }

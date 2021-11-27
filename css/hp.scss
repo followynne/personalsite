@@ -49,52 +49,61 @@
     font-weight: 800;
     margin: 20px 0 15px 0;
 
+    &.cv-title {
+      @include main.max-mobile-width() {
+        visibility: hidden;
+        height: 30px;
+      }
+    }
+
     // https://codepen.io/dillansimmons/pen/qZPzQr
-    &.social a {
-      text-align: center;
-      line-height: 42px;
-      border-radius: 50%;
-      color: #414345;
-      display: inline-block;
-      height: 42px;
-      margin-left: 10px;
-      margin-right: 10px;
-      width: 42px;
+    &.social {
+      a {
+        text-align: center;
+        line-height: 38px;
+        border-radius: 50%;
+        color: #414345;
+        display: inline-block;
+        height: 40px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 44px;
 
-      &.uk-cool {
-        border: 2px solid #e6e628;
-      }
-
-      &.it-cool {
-        border: 2px solid #b92613;
-      }
-
-      &:hover {
-        /* if hover broken this image link is probably broken 😞 */
-        background: url(https://img.freepik.com/free-vector/space-with-stars-universe-space-infinity-background_78474-99.jpg?size=626&ext=jpg);
-        transition: background 0.2s;
-        animation: bgscroll 200s infinite linear;
-        -webkit-animation: bgscroll 200s infinite linear;
-        -ms-animation: bgscroll 200s infinite linear;
-        -o-animation: bgscroll 200s infinite linear;
-        border: 2px solid #414345;
-        color: #fff;
-        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
-      }
-
-      @keyframes bgscroll {
-        0% {
-          background-position: 0 0;
+        &.uk-cool {
+          border: 2px solid #e6e628;
         }
-        25%,
-        75% {
-          background-position: -2506px 2000px;
+
+        &.it-cool {
+          border: 2px solid #b92613;
         }
-        50% {
-          background-position: 2000px -2000;
+
+        &:hover {
+          /* if hover broken this image link is probably broken 😞 */
+          background: url(https://img.freepik.com/free-vector/space-with-stars-universe-space-infinity-background_78474-99.jpg?size=626&ext=jpg);
+          transition: background 0.2s;
+          animation: bgscroll 200s infinite linear;
+          -webkit-animation: bgscroll 200s infinite linear;
+          -ms-animation: bgscroll 200s infinite linear;
+          -o-animation: bgscroll 200s infinite linear;
+          border: 2px solid #414345;
+          color: #fff;
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.24), 0 0 4px rgba(0, 0, 0, 0.12);
         }
-        100% {
-          background-position: 1000 0;
+
+        @keyframes bgscroll {
+          0% {
+            background-position: 0 0;
+          }
+          25%,
+          75% {
+            background-position: -2506px 2000px;
+          }
+          50% {
+            background-position: 2000px -2000;
+          }
+          100% {
+            background-position: 1000 0;
+          }
         }
       }
     }
