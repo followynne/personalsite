@@ -2,14 +2,14 @@
 <html>
 
   <head>
-    <include src="shared-templates/head.html" locals='{
+    <include src="html/shared-templates/head.html" locals='{
       "pageTitle": "How to... host a site using Github Pages and Parcel"
     }'></include>
-    <link rel="stylesheet" type="text/css" href="../assets/css/articles.scss">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/articles.scss">
   </head>
 
   <body data-bs-spy="scroll" data-bs-target="#navbar-toc" data-bs-offset="0">
-    <include src="shared-templates/header-article.html"></include>
+    <include src="html/shared-templates/header-article.html"></include>
     <div class="banner-tut">
       <article class="markdown-body">
         <h1>How to... host a site using Github Pages and Parcel</h1>
@@ -340,10 +340,10 @@ $ git checkout master
       </article>
     </div>
 
-    <include src="shared-templates/footer.html"></include>
-    <include src="shared-templates/progress-bar.html"></include>
+    <include src="html/shared-templates/footer.html"></include>
+    <include src="html/shared-templates/progress-bar.html"></include>
     <include
-    src="articles/parts/toc-btn.html"
+    src="html/articles/parts/toc-btn.html"
     locals='{
     "ntm": [
       { "link": "intro", "title": "Intro"},
@@ -354,7 +354,7 @@ $ git checkout master
   ></include>
   <script type="module" src="/assets/script/swiper.ts"></script>
   <script type="module" src="/assets/script/toc.ts"></script>
-    <include src="shared-templates/disqus.html" locals='{
+    <include src="html/shared-templates/disqus.html" locals='{
       "pageUrl": "https://www.matteogregoricchio.com/articles/github-pages-hosting-with-parcel",
       "pageIdentifier": "github-pages-hosting-with-parcel"
     }'></include>

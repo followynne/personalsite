@@ -20,8 +20,8 @@
   "scripts": {
     "deploy": "gh-pages -d dist",
     "lint": "eslint",
-    "predeploy": "rm -rf dist && parcel build ./*.html ./articles/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist && cp sitemap.xml ./dist",
-    "start": "parcel ./*.html ./articles/*.html"
+    "predeploy": "rm -rf dist && parcel build ./html/**/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist && cp sitemap.xml ./dist",
+    "start": "parcel ./html/**/*.html"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
@@ -42,6 +42,7 @@
     "parcel": "^2.0.1",
     "posthtml-expressions": "^1.9.0",
     "posthtml-include": "^1.7.2",
+    "posthtml-modules": "^0.7.6",
     "sass": "^1.43.5"
   },
   "dependencies": {

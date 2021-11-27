@@ -2,12 +2,12 @@
 <html>
   <head>
     <include
-      src="shared-templates/head.html"
+      src="html/shared-templates/head.html"
       locals='{
       "pageTitle": "Shift Manager Tool: a showcase"
     }'
     ></include>
-    <link rel="stylesheet" type="text/css" href="../assets/css/articles.scss" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/articles.scss" />
     <script>
       // TMP
       const query = new URLSearchParams(window.location.search);
@@ -19,7 +19,7 @@
   </head>
 
   <body data-bs-spy="scroll" data-bs-target="#navbar-toc" data-bs-offset="0">
-    <include src="shared-templates/header-article.html"></include>
+    <include src="html/shared-templates/header-article.html"></include>
     <div class="banner-tut">
       <article class="markdown-body fs-5">
         <h1>Shift Manager Tool: a showcase</h1>
@@ -238,7 +238,7 @@
             </small>
           </div>
           <div class="text-center fs-5">
-            <include src="articles/parts/smt-carousels.html"></include>
+            <include src="html/articles/parts/smt-carousels.html"></include>
           </div>
           <div class="divider"></div>
           <small class="alert alert-secondary fs-6 p-0 width-reduce">
@@ -374,10 +374,10 @@
       </article>
     </div>
 
-    <include src="shared-templates/footer.html"></include>
-    <include src="shared-templates/progress-bar.html"></include>
+    <include src="html/shared-templates/footer.html"></include>
+    <include src="html/shared-templates/progress-bar.html"></include>
     <include
-      src="articles/parts/toc-btn.html"
+      src="html/articles/parts/toc-btn.html"
       locals='{
       "ntm": [
         { "link": "prequel", "title": "A long time ago..."},
@@ -391,7 +391,7 @@
     <script type="module" src="/assets/script/swiper.ts"></script>
     <script type="module" src="/assets/script/toc.ts"></script>
     <include
-      src="shared-templates/disqus.html"
+      src="html/shared-templates/disqus.html"
       locals='{
       "pageUrl": "https://www.matteogregoricchio.com/articles/shift-manager-tool-showcase",
       "pageIdentifier": "shift-manager-tool-showcase"

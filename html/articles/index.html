@@ -2,16 +2,16 @@
 <html>
   <head>
     <include
-      src="shared-templates/head.html"
+      src="html/shared-templates/head.html"
       locals='{
       "pageTitle": "How-To, articles & guides"
     }'
     ></include>
-    <link rel="stylesheet" type="text/css" href="../assets/css/articles.scss" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/articles.scss" />
   </head>
 
   <body>
-    <include src="shared-templates/header-article.html"></include>
+    <include src="html/shared-templates/header-article.html"></include>
     <div class="banner-tut markdown-body content">
       <h3 class="text-center">Articles List</h3>
       <section>
@@ -42,9 +42,9 @@
       </section>
     </div>
 
-    <include src="shared-templates/footer.html"></include>
+    <include src="html/shared-templates/footer.html"></include>
     <include
-      src="shared-templates/disqus.html"
+      src="html/shared-templates/disqus.html"
       locals='{
       "pageUrl": "https://www.matteogregoricchio.com/articles/",
       "pageIdentifier": "articles-list"

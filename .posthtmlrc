@@ -1,6 +1,8 @@
 {
   "plugins": {
     "posthtml-include": {},
-    "posthtml-expressions": {},
+    "posthtml-expressions": {
+      "strictMode": false,
+    },
   }
 }
