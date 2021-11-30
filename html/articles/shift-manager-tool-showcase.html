@@ -8,14 +8,6 @@
     }'
     ></include>
     <link rel="stylesheet" type="text/css" href="/assets/css/articles.scss" />
-    <script>
-      // TMP
-      const query = new URLSearchParams(window.location.search);
-      const secretKey = query.get('fptel__rx');
-      if (!secretKey || secretKey !== '32043935') {
-        window.location.replace(`${window.location.origin}/articles`);
-      }
-    </script>
   </head>
 
   <body data-bs-spy="scroll" data-bs-target="#navbar-toc" data-bs-offset="0">
@@ -117,7 +109,7 @@
             <a
               target="_blank"
               href="https://www.linkedin.com/in/nicholas-de-pasquale-9a3b11178"
-              >@Nicholas
+              >@Nicholas De Pasquale
             </a>
             came by and splurted out the idea:
             <div class="alert alert-success p-1 w-75 fw-italic fw-bold">
