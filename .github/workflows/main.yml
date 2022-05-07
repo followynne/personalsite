@@ -46,4 +46,11 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm ci
-          npm run deploy
+          npm run predeploy
+          
+      - name: GH Pages deploy
+        uses: Cecilapp/GitHub-Pages-deploy@3.2.1
+        with:
+          email: matteo.gregoricchio@libero.it
+          build_dir: dist
+
