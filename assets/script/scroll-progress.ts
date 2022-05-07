@@ -1,7 +1,7 @@
 const updateScrollBarPosition = () => {
-  const progressBar = document.querySelector(
+  const progressBar = document.querySelector<HTMLElement>(
     '.articles-progress-bar .progress-bar',
-  ) as HTMLElement;
+  );
   const verticalPos = window.scrollY;
   const pageHeight = document.body.scrollHeight;
   const posHeight = window.innerHeight;
