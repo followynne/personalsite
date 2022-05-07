@@ -1,4 +1,4 @@
-import * as bts from 'bootstrap';
+import { Popover, Tooltip } from 'bootstrap';
 
 const printDate = () => {
   const date = new Date().getFullYear();
@@ -23,8 +23,7 @@ const printDate = () => {
 
   const popoverItem = document.getElementById('itsCourse');
   if (popoverItem) {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const popover = new bts.Popover(popoverItem, {
+    new Popover(popoverItem, {
       placement: 'auto',
       trigger: 'hover',
       content:
@@ -49,7 +48,7 @@ const printDate = () => {
   const tooltipItem = document.querySelector('.cv.social .cool-ones');
   const tooltipItem2 = document.querySelector('.cv.social .boring-ones');
   if (tooltipItem) {
-    const tooltip = new bts.Tooltip(tooltipItem, {
+    const tooltip = new Tooltip(tooltipItem, {
       placement: 'left',
       title:
         '<small>the cool ones!<div><a href="https://rxresu.me/" target="_blank">Made with RxResume</div></a></small>',
@@ -59,7 +58,7 @@ const printDate = () => {
     tooltip.show();
   }
   if (tooltipItem2) {
-    const tooltip2 = new bts.Tooltip(tooltipItem2, {
+    const tooltip2 = new Tooltip(tooltipItem2, {
       placement: 'right',
       title: '<small>the boring ones!</small>',
       html: true,
