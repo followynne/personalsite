@@ -30,27 +30,14 @@ jobs:
         with:
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
           node-version: ${{env.NODE_VERSION}}
-          
-      - name: Git Config
-        run: |
-          git config user.email matteo.gregoricchio@libero.it
-          git config user.name 'Matteo Gregoricchio'          
-          # npm using git for https
-          git config --global url."git@github.com:".insteadOf https://github.com/
-          git config --global url."git://".insteadOf https://
-          git remote set-url origin https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$INPUT_REPO.git
-
+      
       # Runs a set of commands using the runners shell
       - name: Deploy
         env:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm ci
-          npm run predeploy
-          
-      - name: GH Pages deploy
-        uses: Cecilapp/GitHub-Pages-deploy@3.2.1
-        with:
-          email: matteo.gregoricchio@libero.it
-          build_dir: dist
-
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
