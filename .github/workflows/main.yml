@@ -35,6 +35,13 @@ jobs:
         run: |
           git config user.email matteo.gregoricchio@libero.it
           git config user.name 'Matteo Gregoricchio'
+          # npm using https for git
+          git config --global url."https://github.com/".insteadOf git@github.com:
+          git config --global url."https://".insteadOf git://
+
+          # npm using git for https
+          git config --global url."git@github.com:".insteadOf https://github.com/
+          git config --global url."git://".insteadOf https://
 
       # Runs a set of commands using the runners shell
       - name: Deploy
