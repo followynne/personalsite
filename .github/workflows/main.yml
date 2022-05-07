@@ -30,6 +30,11 @@ jobs:
         with:
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
           node-version: ${{env.NODE_VERSION}}
+          
+      - name: Git Config
+        run: |
+          git config user.email matteo.gregoricchio@libero.it
+          git config user.name 'Matteo Gregoricchio'
 
       # Runs a set of commands using the runners shell
       - name: Deploy
