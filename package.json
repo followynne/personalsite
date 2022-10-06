@@ -20,7 +20,7 @@
   "scripts": {
     "deploy": "gh-pages -d dist",
     "lint": "eslint",
-    "predeploy": "rm -rf dist && parcel build ./html/**/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist && cp sitemap.xml ./dist",
+    "predeploy": "rm -rf dist && parcel build html/index.html ./html/**/*.html --log-level verbose --public-url https://www.matteogregoricchio.com/ && cp CNAME ./dist && cp sitemap.xml ./dist",
     "start": "parcel ./html/**/*.html",
     "typecheck": "tsc --noEmit"
   },
