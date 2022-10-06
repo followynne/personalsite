@@ -123,7 +123,7 @@ a {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 0 0.5em 0.5em 0;
+    margin: 0 0.5em 1.5em 0;
     padding: 0.25em;
     font-size: 0.8em;
     color: white;
@@ -273,8 +273,7 @@ PERSONAL INFO & CAROUSEL
     }
 
     .carousel-inner img {
-      height: 300px;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .carousel-caption {
@@ -287,9 +286,11 @@ PERSONAL INFO & CAROUSEL
 
     .no-back {
       background: none;
+      max-height: 100%;
+      height: 85%;
     }
 
-    #delta {
+    #current-job {
       width: 210px;
       height: 40px;
       padding-bottom: 3px;
@@ -307,7 +308,7 @@ PERSONAL INFO & CAROUSEL
       }
     }
 
-    #other {
+    .other {
       width: 90px;
       height: 35px;
     }
