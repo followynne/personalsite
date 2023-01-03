@@ -1,4 +1,4 @@
-import { Popover, Tooltip } from 'bootstrap';
+import { Popover } from 'bootstrap';
 
 const printDate = () => {
   const date = new Date().getFullYear();
@@ -44,25 +44,5 @@ const printDate = () => {
         '</br>INTERACTION DESIGN, VISUAL DESIGN Basics, 44hr' +
         '</br>PROJECT MANAGEMENT Basics, 30hr',
     });
-  }
-  const tooltipItem = document.querySelector('.cv.social .cool-ones');
-  const tooltipItem2 = document.querySelector('.cv.social .boring-ones');
-  if (tooltipItem) {
-    const tooltip = new Tooltip(tooltipItem, {
-      placement: 'left',
-      title:
-        '<small>the cool ones!<div><a href="https://rxresu.me/" target="_blank">Made with RxResume</div></a></small>',
-      html: true,
-      customClass: 'text-justify',
-    });
-    tooltip.show();
-  }
-  if (tooltipItem2) {
-    const tooltip2 = new Tooltip(tooltipItem2, {
-      placement: 'right',
-      title: '<small>the boring ones!</small>',
-      html: true,
-    });
-    tooltip2.show();
   }
 })();
