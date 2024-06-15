@@ -14,7 +14,7 @@
       rgba(182, 225, 238, 0.281),
       rgba(157, 191, 218, 0.658)
     ),
-    url('../img/bg/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat scroll center /
+    url('../img/bg/jj-ying-7JX0-bfiuxQ-unsplash.jpg') no-repeat scroll center /
       cover;
 
   @include main.min-desktop-width() {
@@ -22,17 +22,21 @@
         rgba(182, 225, 238, 0.281),
         rgba(157, 191, 218, 0.658)
       ),
-      url('../img/bg/patrick-schopflin-TN2Azd9iPaM.jpg') no-repeat fixed center /
+      url('../img/bg/jj-ying-7JX0-bfiuxQ-unsplash.jpg') no-repeat fixed center /
         cover;
   }
 
   & &-content {
     position: absolute;
-    bottom: 1em;
+    bottom: 2em;
     left: 0;
     right: 0;
     margin-left: auto;
     margin-right: auto;
+
+    @include main.min-tablet-width() {
+      bottom: 1em;
+    }
 
     h1,
     h5,
@@ -43,18 +47,11 @@
   }
 
   .cv {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-family: 'Lato', bold;
     color: #3a2a2a;
     font-weight: 800;
-    margin: 20px 0 15px 0;
-
-    &.cv-title {
-      @include main.max-mobile-width() {
-        visibility: hidden;
-        height: 30px;
-      }
-    }
+    margin: 1em 0 0.8em 0;
 
     // https://codepen.io/dillansimmons/pen/qZPzQr
     &.social {
@@ -128,6 +125,11 @@ a {
     font-size: 0.8em;
     color: white;
     background-color: rgba(0, 0, 0, 0.2);
+
+    &.top {
+      top: 0;
+      bottom: unset;
+    }
   }
 }
 /**************************
@@ -137,7 +139,8 @@ a {
   box-sizing: border-box;
   max-width: 100%;
   margin: 0 auto;
-  padding: 40px 3% 20px 3%;
+  padding: 1.5em;
+  position: relative;
 }
 
 .section-title {
@@ -153,12 +156,9 @@ img {
 }
 
 #portfolio {
-  background: linear-gradient(
-      rgba(182, 225, 238, 0.281),
-      rgba(157, 191, 218, 0.658)
-    ),
-    url('../img/bg/fabrizio-conti-7lePZXJXYBM.jpg') no-repeat fixed center /
-      cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../img/bg/koushik-chowdavarapu-aWBPk_GBaCk-unsplash.jpg') no-repeat
+      fixed center / cover;
   position: relative;
 }
 
@@ -167,16 +167,25 @@ img {
   padding: 0;
 
   div.card {
-    height: 290px;
+    height: 200px;
     overflow: auto;
 
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(244, 244, 244, 0.898);
     border-radius: 4px;
     position: relative;
     text-align: center;
 
+    @include main.min-desktop-width() {
+      height: 280px;
+    }
+
     &::-webkit-scrollbar {
       display: none;
+    }
+
+    &.os {
+      height: auto;
+      padding-bottom: 0.5em;
     }
 
     p {
@@ -189,6 +198,14 @@ img {
     a {
       text-decoration: none;
     }
+
+    .card-img-top {
+      height: 100px;
+    }
+
+    .card-body {
+      align-content: center;
+    }
   }
 }
 
@@ -197,20 +214,15 @@ ABOUT
 ***************************/
 #about {
   &.cont {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
-      url('../img/bg/about_img.jpg') no-repeat fixed center / cover;
-    padding: 30px 0 40px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)),
+      url('../img/bg/henry-co--odUkx8C2gg-unsplash.jpg') no-repeat fixed center /
+        cover;
   }
 
   p,
   h4 {
     color: #ffffff;
     text-align: justify;
-    line-height: 1.3rem;
-  }
-
-  p {
-    font-size: large;
   }
 
   a {
@@ -221,18 +233,18 @@ ABOUT
     width: 90%;
   }
 
-  .foto-profilo {
+  .profile-pic {
     display: block;
-    max-width: 250px;
+    max-width: 180px;
     margin: 0 auto;
     border-radius: 40%;
 
     @include main.min-desktop-width() {
-      margin-top: 20px;
+      margin-top: 0.4em;
     }
 
     @include main.max-mobile-width() {
-      padding-bottom: 20px;
+      padding-bottom: 0.4em;
     }
   }
 }
@@ -241,8 +253,10 @@ ABOUT
 PERSONAL INFO & CAROUSEL
 ***************************/
 #extra-info {
-  background-color: rgba(132, 170, 245, 0.445);
+  background-color: rgba(214, 146, 47, 0.4);
   width: 100%;
+  $carousel-control-icon-width: 1rem;
+  $carousel-control-color: rgb(0, 0, 0);
 
   #info {
     width: 100%;
@@ -263,9 +277,18 @@ PERSONAL INFO & CAROUSEL
   }
 
   #contatti {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     @include main.min-tablet-width() {
+      height: 100%;
       width: 50%;
       float: right;
+    }
+
+    .carousel-indicators {
+      margin-bottom: 0.3rem;
     }
 
     .carousel-inner {
@@ -273,15 +296,19 @@ PERSONAL INFO & CAROUSEL
     }
 
     .carousel-inner img {
-      object-fit: contain;
+      object-fit: cover;
+    }
+    .carousel-inner img.main {
+      object-fit: cover;
+      height: 100%;
     }
 
     .carousel-caption {
       background: rgba(0, 0, 0, 0.6);
       font-size: 0.8rem;
-      line-height: 0.9rem;
+      line-height: 0.8rem;
       font-weight: 700;
-      padding-bottom: 50px;
+      bottom: 0;
       position: sticky;
     }
 
@@ -294,18 +321,18 @@ PERSONAL INFO & CAROUSEL
     #current-job {
       width: 210px;
       height: 40px;
-      padding-bottom: 3px;
+      padding-bottom: 4px;
 
       @include main.min-desktop-width() {
         width: 320px;
         height: 60px;
-        padding-bottom: 3px;
+        padding-bottom: 2px;
       }
 
       @include main.min-xl-width() {
         width: 350px;
         height: 70px;
-        padding-bottom: 3px;
+        padding-bottom: 2px;
       }
     }
 

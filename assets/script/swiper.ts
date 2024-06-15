@@ -2,7 +2,8 @@
 import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
 import SimpleLightBox from 'simplelightbox';
-import * as swipy from 'swiper';
+import { Swiper } from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.min.css';
 import '../css/swiper.scss';
 
@@ -10,7 +11,7 @@ const attachLbox = () => {
   const selectGalleries = document.querySelectorAll('.gallery');
   selectGalleries.forEach((element) => {
     const classLists = [...element.classList].join('.');
-    const e = new SimpleLightBox(`.${classLists} .swiper-slide .card-image a`, {
+    const _ = new SimpleLightBox(`.${classLists} .swiper-slide .card-image a`, {
       uniqueImages: false,
       captionPosition: 'outside',
     });
@@ -18,9 +19,9 @@ const attachLbox = () => {
 };
 
 // configure Swiper to use modules
-swipy.Swiper.use([swipy.Navigation, swipy.Pagination]);
+Swiper.use([Navigation, Pagination]);
 // init Swiper:
-const swiper = new swipy.Swiper('.swiper', {
+const swiper = new Swiper('.swiper', {
   // Optional parameters
   breakpoints: {
     500: {

@@ -2,7 +2,7 @@ import { Popover } from 'bootstrap';
 
 const printDate = () => {
   const date = new Date().getFullYear();
-  document.getElementById('currentYearPrint').append(date.toString());
+  document.getElementById('currentYearPrint')?.append(date.toString());
 };
 
 (() => {
@@ -11,8 +11,9 @@ const printDate = () => {
       if (anchor && typeof anchor?.getAttribute === 'function') {
         e.preventDefault();
         const attribute = anchor?.getAttribute('href');
+        if (!attribute) return;
 
-        document.querySelector(attribute).scrollIntoView({
+        document.querySelector(attribute)?.scrollIntoView({
           behavior: 'smooth',
         });
       }
@@ -46,3 +47,4 @@ const printDate = () => {
     });
   }
 })();
+

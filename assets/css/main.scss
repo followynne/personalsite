@@ -1,7 +1,7 @@
 @use './normalize.css';
-@import '~bootswatch/dist/cerulean/variables';
+@import 'node_modules/bootswatch/dist/cerulean/variables';
 @import '~bootstrap/scss/bootstrap';
-@import '~bootswatch/dist/cerulean/bootswatch';
+@import 'node_modules/bootswatch/dist/cerulean/bootswatch';
 
 @mixin max-mobile-width() {
   @media (max-width: 767px) {
@@ -36,8 +36,14 @@
 /**************************
         GENERAL
 ***************************/
+:root {
+  font-family: 'Lato', sans-serif;
+  --bs-body-font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  --bs-body-font-size: 14px;
+}
+
 body {
-  font-family: 'Lato', sans-serif !important;
   height: 100vh;
   margin: 0;
   display: flex;
@@ -122,8 +128,6 @@ header {
   #logo {
     text-align: center;
     @include min-tablet-width() {
-      float: left;
-      width: 40%;
       margin-left: 5%;
       text-align: left;
     }
@@ -132,7 +136,6 @@ header {
   h1 {
     color: white;
     font-family: 'Lato', bold;
-    margin: 5px 0 3px 0;
     font-size: 1.5rem;
 
     a {
@@ -156,7 +159,7 @@ header {
     background-color: rgb(132, 172, 211);
     opacity: 0.7;
     text-align: center;
-    padding: 5px 0 5px 0;
+    padding: 0.5em;
 
     a {
       color: #fff;
@@ -172,12 +175,11 @@ header {
     }
 
     @include min-tablet-width() {
-      float: right;
-      width: 49%;
       margin-right: 3%;
       background: none;
       text-align: right;
       opacity: 1;
+      flex-grow: 1;
 
       a {
         padding: 0 5px;
@@ -188,9 +190,16 @@ header {
     }
 
     ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       list-style: none;
-      margin: 5px 0;
       padding: 0;
+      margin: 0;
+
+      @include min-tablet-width() {
+        justify-content: end;
+      }
     }
     li {
       display: inline-block;
@@ -207,7 +216,8 @@ header {
     z-index: 1000;
 
     @include min-tablet-width() {
-      box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.4);
+      align-content: space-between;
+      display: flex;
     }
 
     @include max-mobile-width() {
@@ -224,10 +234,13 @@ header {
 ***************************/
 .main-footer {
   margin-top: auto;
-  padding: 25px;
+  padding: 0.8em;
   background-color: rgba(102, 180, 239, 0.5);
   text-align: center;
-  clear: both;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 0.4em;
 
   p {
     font-size: 0.85em;
@@ -240,8 +253,8 @@ header {
   }
 
   .icona_social {
-    width: 35px;
-    height: 35px;
-    margin: 0 5px;
+    width: 24px;
+    height: 24px;
+    margin: 0 0.3em;
   }
 }
