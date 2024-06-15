@@ -201,6 +201,7 @@ img {
 
     .card-img-top {
       height: 100px;
+      object-fit: cover;
     }
 
     .card-body {
@@ -342,4 +343,3 @@ PERSONAL INFO & CAROUSEL
     }
   }
 }
-
