@@ -97,3 +97,15 @@
 .pin-down {
   margin-top: 120px;
 }
+
+.navbar.toc {
+  z-index: 1002;
+  left: 0.1em;
+  top: 1em;
+
+  @include main.min-tablet-width() {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+}

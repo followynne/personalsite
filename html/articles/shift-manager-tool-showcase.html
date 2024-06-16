@@ -13,8 +13,9 @@
   <body data-bs-spy="scroll" data-bs-target="#navbar-toc" data-bs-offset="0">
     <include src="html/shared-templates/header-article.html"></include>
     <div class="banner-tut">
-      <article class="markdown-body fs-5">
+      <article class="markdown-body fs-">
         <h1>Shift Manager Tool: a showcase</h1>
+
         <section>
           <div class="alert alert-info width-reduce">
             <span class="title text-center">
@@ -371,14 +372,14 @@
     <include
       src="html/articles/parts/toc-btn.html"
       locals='{
-      "ntm": [
-        { "link": "prequel", "title": "A long time ago..."},
-        { "link": "intro", "title": "Intro"},
-        { "link": "mission", "title": "Mission"},
-        { "link": "showcase", "title": "Showcase"},
-        { "link": "techstack", "title": "Tech Stack"},
-        { "link": "byebye", "title": "Greetings"}
-      ]}'
+        "ntm": [
+          { "link": "prequel", "title": "A long time ago..."},
+          { "link": "intro", "title": "Intro"},
+          { "link": "mission", "title": "Mission"},
+          { "link": "showcase", "title": "Showcase"},
+          { "link": "techstack", "title": "Tech Stack"},
+          { "link": "byebye", "title": "Greetings"}
+        ]}'
     ></include>
     <script type="module" src="/assets/script/swiper.ts"></script>
     <script type="module" src="/assets/script/toc.ts"></script>

@@ -118,7 +118,7 @@ body {
 header {
   + div,
   + article {
-    padding-top: 100px;
+    padding-top: 5.5em;
   }
 
   a {
@@ -127,9 +127,13 @@ header {
 
   #logo {
     text-align: center;
+    margin: 0.5em;
+    justify-content: center;
+
     @include min-tablet-width() {
-      margin-left: 5%;
-      text-align: left;
+      margin-left: 3%;
+      margin: 0;
+      padding: 0.5em;
     }
   }
 
@@ -137,6 +141,7 @@ header {
     color: white;
     font-family: 'Lato', bold;
     font-size: 1.5rem;
+    margin: 0;
 
     a {
       text-decoration: none;
@@ -194,6 +199,7 @@ header {
       align-items: center;
       justify-content: center;
       list-style: none;
+      height: 100%;
       padding: 0;
       margin: 0;
 
@@ -209,21 +215,20 @@ header {
   &.main-header {
     background-color: rgba(2, 40, 115, 0.7);
     margin: 0 0 0 0;
-    padding: 10px 0 0 0;
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 
     @include min-tablet-width() {
       align-content: space-between;
       display: flex;
+      padding: 0.4em;
     }
 
     @include max-mobile-width() {
       h1 {
         font-size: 1.4em;
-        padding-bottom: 0.3em;
       }
     }
   }
