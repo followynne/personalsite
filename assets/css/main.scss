@@ -131,8 +131,8 @@ header {
     justify-content: center;
 
     @include min-tablet-width() {
-      margin-left: 3%;
       margin: 0;
+      margin-left: 3%;
       padding: 0.5em;
     }
   }
