@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import '@fortawesome/fontawesome-free/css/fontawesome.min.css';
-import '@fortawesome/fontawesome-free/css/solid.min.css';
 import SimpleLightBox from 'simplelightbox';
 import { Swiper } from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
