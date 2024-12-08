@@ -1,6 +1,6 @@
 @use './main.scss';
 
-@import '../../node_modules/flag-icons/css/flag-icons.min.css';
+@import 'npm:flag-icons/css/flag-icons.min.css';
 
 /**************************
         BANNER
@@ -201,7 +201,7 @@ img {
 
     .card-img-top {
       height: 100px;
-      object-fit: cover;
+      object-fit: scale-down;
     }
 
     .card-body {

@@ -1,7 +1,7 @@
 @use './normalize.css';
-@import 'node_modules/bootswatch/dist/cerulean/variables';
-@import '~bootstrap/scss/bootstrap';
-@import 'node_modules/bootswatch/dist/cerulean/bootswatch';
+@import 'npm:bootswatch/dist/cerulean/variables';
+@import 'npm:bootstrap/scss/bootstrap';
+@import 'npm:bootswatch/dist/cerulean/bootswatch';
 
 @mixin max-mobile-width() {
   @media (max-width: 767px) {
